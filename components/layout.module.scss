@@ -1,0 +1,11 @@
+.layout_container {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+}
+
+
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
