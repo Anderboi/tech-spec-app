@@ -1,8 +1,9 @@
 import React from 'react'
+import Layout from "../components/layout"
 
 function ContactsPage():JSX.Element {
 	return (
-		<div>ContactsPage</div>
+		<Layout>ContactsPage</Layout>
 	)
 }
 

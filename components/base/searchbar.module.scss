@@ -1,5 +1,25 @@
-.input {
-	padding: 1rem 2rem;
-	border-radius: var(--border-radius);
-	border: 1px solid red;
+@use "../../styles/abstracts" as *;
+
+.search {
+  display: flex;
+  align-items: center;
+  border-radius: $border-radius;
+  border: 1px solid $color-tertiary;
+  background-color: $color-bg-variant;
+  height: 4.8rem;
+
+
+  .input {
+    font-family: "Inter", sans-serif;
+    font-size: 1.8rem;
+    line-height: 1em;
+    font-weight: 600;
+    background: transparent;
+    border: none;
+    border-radius: $border-radius;
+    padding: 1.5rem 2rem 1.5rem 6.5rem;
+    width: 17ch;
+    background: transparent url("../../public/search_icon.svg" ) no-repeat 20px center;
+
+  }
 }

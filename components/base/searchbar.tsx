@@ -1,9 +1,17 @@
-import React from 'react';
-import style from './searchbar.module.scss';
-import cn from 'classnames';
+import React from "react";
+import style from "./searchbar.module.scss";
+import cn from "classnames";
 
 function Searchbar() {
-  return <input className={cn(style.input, style.search)} type='search' />;
+  return (
+    <form action="#" className={style.search}>
+      <input
+        className={cn(style.input)}
+        type="search"
+        placeholder="Search..."
+      />
+    </form>
+  );
 }
 
 export default Searchbar;

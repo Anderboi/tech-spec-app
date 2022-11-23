@@ -1,0 +1,33 @@
+@use "../../styles/abstracts" as *;
+
+.container {
+  display: flex;
+  position: relative;
+
+  .stage_badge {
+    width: 3.4rem;
+    height: 3.4rem;
+    line-height: 1em;
+    background-color: $color-tertiary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    color: $color-bg;
+    border: 2px solid $color-bg;
+    border-radius: $border-radius;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  .first {
+    right: 1rem;
+  }
+  .second {
+    right: 2rem;
+  }
+  .third{
+    right: 3rem;
+  }
+}

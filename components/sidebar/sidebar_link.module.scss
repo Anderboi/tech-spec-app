@@ -1,0 +1,30 @@
+@use '../../styles/abstracts' as *;
+
+.item {
+  font-weight: 700;
+  border: 2px solid transparent;
+  padding: 1rem 2rem;
+  border-radius: $border-radius;
+  font-size: 1.8rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  line-height: 1em;
+
+  &:hover {
+    background-color: $color-bg-variant;
+  }
+
+  .icon {
+    font-size: 2.4rem;
+
+  }
+}
+
+.active {
+  border-color: $color-secondary;
+  
+  .icon {
+    color: $color-secondary;
+  }
+}

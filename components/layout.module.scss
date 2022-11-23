@@ -1,11 +1,17 @@
+@use '../styles/abstracts' as *;
+
 .layout_container {
   display: grid;
   grid-template-columns: 320px 1fr;
+  // padding-left: $sidebar-width;
+  
+  .main_block {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    
+  }
 }
 
 
 
-.container {
-  max-width: 1000px;
-  margin: auto;
-}

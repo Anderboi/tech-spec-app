@@ -1,0 +1,13 @@
+@use '../../styles/abstracts' as *;
+
+.logo_block {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-end;
+
+  .logo__text {
+    font-size: 4rem;
+    font-family: $logo-font;
+    margin: 0;
+  }
+}
