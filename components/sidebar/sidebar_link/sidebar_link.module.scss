@@ -1,7 +1,7 @@
-@use '../../styles/abstracts' as *;
+@use '../../../styles/abstracts' as *;
 
 .item {
-  font-weight: 700;
+  font-weight: 500;
   border: 2px solid transparent;
   padding: 1rem 2rem;
   border-radius: $border-radius;
@@ -26,5 +26,6 @@
   
   .icon {
     color: $color-secondary;
+    fill:  $color-secondary;
   }
 }

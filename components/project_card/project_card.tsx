@@ -3,12 +3,13 @@ import React from "react";
 import style from "./project_card.module.scss";
 import { TiStarOutline, TiStarFullOutline } from "react-icons/ti";
 import { FiMoreVertical } from "react-icons/fi";
-import { IProjectCard } from "../../types/types";
+import { IProject } from "../../types/types";
 import ProjectStage from "./project_stage";
+import Divider from "../base/divider";
 
 
 
-const ProjectCard = ({ title, area, image, stage }: IProjectCard) => {
+const ProjectCard = ({ address, area, image, stage }: IProject) => {
   return (
     <div className={style.card}>
       <div className={style.image_conteiner}>
@@ -23,8 +24,8 @@ const ProjectCard = ({ title, area, image, stage }: IProjectCard) => {
         />
       </div>
       <div className={style.info_block}>
-        <h4 className={style.info_block__title}>{title}</h4>
-        <hr className={style.devider} />
+        <h4 className={style.info_block__title}>{address}</h4>
+        <Divider className={style.divider} />
 
         <div className={style.lower_block}>
           <div>

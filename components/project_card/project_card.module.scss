@@ -15,6 +15,10 @@
   .info_block {
     padding: 2rem 2rem;
 
+    .divider {
+      margin: 2rem 0 3rem;
+    }
+
     .info_block__title {
       text-align: center;
       color: $color-primary;

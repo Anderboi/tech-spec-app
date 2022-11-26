@@ -2,8 +2,7 @@
 
 .layout_container {
   display: grid;
-  grid-template-columns: 320px 1fr;
-  // padding-left: $sidebar-width;
+  grid-template-columns: $sidebar-width 1fr;
   
   .main_block {
     max-width: 1000px;

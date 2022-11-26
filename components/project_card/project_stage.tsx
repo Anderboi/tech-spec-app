@@ -3,10 +3,14 @@ import { Stage } from "../../types/types";
 import style from "./project_stage.module.scss";
 import cn from "classnames";
 
-const ProjectStage = (data: Stage): JSX.Element => {
-  console.log(data.stage);
+interface IStage {
+  stage: Stage
+}
 
-  switch (data.stage) {
+const ProjectStage = (stage: IStage): JSX.Element => {
+  console.log(stage.stage);
+
+  switch (stage.stage) {
     case "Feasibility":
       return (
         <div className={style.container}>

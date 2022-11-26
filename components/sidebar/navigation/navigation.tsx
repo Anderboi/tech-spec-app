@@ -1,16 +1,18 @@
 import React from "react";
 import style from "./navigation.module.scss";
 import { useRouter } from "next/router";
-import { RiContactsLine } from "react-icons/ri";
+import { RiContactsLine,RiStackLine } from "react-icons/ri";
 import { GrProjects } from "react-icons/gr";
-import { menuItem } from "../../types/nav_item";
-import Sidebar_link from "./sidebar_link";
+import { menuItem } from "../../../types/nav_item";
+import SidebarLink from "../sidebar_link/sidebar_link";
+import cn from 'classnames';
+import { INavigation } from "./navigation.props";
 
 const menuItems: Array<menuItem> = [
   {
     id: 1,
     name: "Projects",
-    icon: <GrProjects />,
+    icon: <RiStackLine />,
     href: "/projectsPage",
   },
   {
@@ -21,13 +23,15 @@ const menuItems: Array<menuItem> = [
   },
 ];
 
-function Navigation() {
+
+
+const Navigation = ({className, ...props}: INavigation):JSX.Element => {
   const router = useRouter();
 
   return (
-    <nav className={style.nav}>
+    <nav className={cn(style.nav, className)}>
       {menuItems.map(({ href, icon, id, name }: menuItem) => {
-        return <Sidebar_link key={id} href={href} icon={icon} name={name} />;
+        return <SidebarLink key={id} href={href} icon={icon} name={name} />;
       })}
     </nav>
   );

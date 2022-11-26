@@ -1,11 +1,13 @@
-import Link from "next/link";
 import React from "react";
-import cn from "classnames";
-import { menuItem } from "../../types/nav_item";
-import style from "./sidebar_link.module.scss";
+import Link from "next/link";
 import { useRouter } from "next/router";
+import cn from "classnames";
+import { menuItem } from "../../../types/nav_item";
+import style from "./sidebar_link.module.scss";
 
-function Sidebar_link({ href, icon, name }: menuItem) {
+
+
+const SidebarLink = ({ href, icon, name }: menuItem):JSX.Element => {
   const router = useRouter();
 
   return (
@@ -19,4 +21,4 @@ function Sidebar_link({ href, icon, name }: menuItem) {
   );
 }
 
-export default Sidebar_link;
+export default SidebarLink;

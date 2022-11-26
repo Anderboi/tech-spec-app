@@ -12,8 +12,10 @@ export type Stage =
   | "Production"
   | "Construction";
 
-export interface IProjectCard {
-  title: string;
+export interface IProject {
+  name: string;
+  id:number;
+  address: string;
   area: number;
   image?: any;
   stage: Stage;

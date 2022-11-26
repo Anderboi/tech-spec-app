@@ -1,0 +1,37 @@
+@use '../../../styles/abstracts' as *;
+
+.container {
+
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  cursor: pointer;
+
+  .avatar {
+    border-radius: $border-radius;
+  }
+
+  .infoBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-grow: 1;
+
+    .name{
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+
+    .email {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: $color-tertiary;
+    }
+  }
+
+  .icon {
+    font-size: 2rem;
+    color: $color-tertiary;
+
+  }
+}

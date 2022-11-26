@@ -11,3 +11,15 @@
     margin: 0;
   }
 }
+
+// Tablets
+@media screen and (max-width: 1024px) {
+  .logo__text {
+    display: none;
+  }
+}
+
+// Mobile
+@media screen and (max-width: 600px) {
+
+}

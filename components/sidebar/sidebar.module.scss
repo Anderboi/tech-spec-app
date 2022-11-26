@@ -2,7 +2,6 @@
 @use '../../styles/abstracts/' as *;
 
 .sidebar {
-  // position: fixed;
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -13,6 +12,34 @@
 
   background-color: $color-bg;
   color: $color-primary;
+
+  .menu__icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    cursor: pointer;
+    color: $color-tertiary;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  .sidebar__projectsBlock{
+    flex-grow: 1;
+  }
 }
 
+// Tablets
+@media screen and (max-width: 1024px) {
+  .sidebar {
+    width: 10rem;
+    align-items: center;
+  }
+}
 
+// Mobile
+@media screen and (max-width: 600px) {
+.sidebar {
+  display: none;
+}
+}
