@@ -3,14 +3,12 @@
 .layout_container {
   display: grid;
   grid-template-columns: $sidebar-width 1fr;
-  
+
   .main_block {
+    width: 100%;
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 2rem;
-    
+
   }
 }
-
-
-

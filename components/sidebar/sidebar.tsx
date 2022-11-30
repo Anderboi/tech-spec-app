@@ -1,6 +1,5 @@
 import React from "react";
 import style from "./sidebar.module.scss";
-import Searchbar from "../base/searchbar";
 import Navigation from "./navigation/navigation";
 import ProjectsSideBlock from "./projects_side_block/projects_side_block";
 import { Logo_block } from "./logo_block";
@@ -23,7 +22,7 @@ const Sidebar = (): JSX.Element => {
         <SidebarLink href="/notifications" name="Notifications" icon={<MdOutlineNotificationsActive />} />
         <SidebarLink href="/help" name="Help" icon={<MdOutlineHelpCenter />} />
       </div>
-      
+
       <Divider/>
       <UserBlock/>
     </aside>

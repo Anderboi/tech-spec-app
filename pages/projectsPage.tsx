@@ -1,6 +1,6 @@
-import Link from "next/link";
 import React from "react";
 import Divider from "../components/base/divider";
+import GridLayout from "../components/layouts/grid_layout";
 import PageSubheader from "../components/page_subheader/page_subheader";
 import ProjectCard from "../components/project_card/project_card";
 import style from "./projectsPage.module.scss";
@@ -9,9 +9,9 @@ import style from "./projectsPage.module.scss";
 function ProjectsPage() {
   return (
     <>
-      <PageSubheader/>
+      <PageSubheader name="Projects"/>
       <Divider className={style.divider}/>
-      <div className={style.projectsBlock}>
+      <GridLayout>
         <ProjectCard
           address="Rublevskoe s. 3/43"
           area={120}
@@ -34,7 +34,7 @@ function ProjectsPage() {
           area={87}
           stage="Production"
         />
-      </div>
+      </GridLayout>
     </>
   );
 }
