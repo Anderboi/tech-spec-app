@@ -5,13 +5,13 @@ import {TiStarOutline} from 'react-icons/ti';
 import style from './page_subheader.module.scss';
 
 interface Props {
-  name: string
+  title: string
 }
 
-const PageSubheader: React.FunctionComponent<Props> = ({name}) => {
+const PageSubheader = ({title}: Props) => {
   return (
     <div className={style.container}>
-      <h3 className={style.tiltle}>{name}</h3>
+      <h3 className={style.tiltle}>{title}</h3>
       <div className={style.iconsBlock}>
         <MdOutlineAddBox  className={style.icon}/>
         <IoSearch  className={style.icon}/>

@@ -77,7 +77,9 @@ const Sidebar = (): JSX.Element => {
       <Logo_block />
       <MenuLayout className={style.sidebar__nav}>{items}</MenuLayout>
       <Divider />
+
       <MenuLayout className={style.sidebar__projectsBlock}>
+        <h3 className={style.sidebar__subheader}>Favourites</h3>
         {projectsList}
       </MenuLayout>
       <MenuLayout className={style.sidebar__nav}>{helpers}</MenuLayout>
