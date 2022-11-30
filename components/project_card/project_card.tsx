@@ -1,11 +1,11 @@
-import Image from 'next/image';
-import React from 'react';
-import style from './project_card.module.scss';
-import {TiStarOutline, TiStarFullOutline} from 'react-icons/ti';
-import {FiMoreVertical} from 'react-icons/fi';
-import {IProject} from '../../types/types';
-import ProjectStage from './project_stage';
-import Divider from '../base/divider';
+import Image from 'next/image'
+import React from 'react'
+import style from './project_card.module.scss'
+import {TiStarOutline, TiStarFullOutline} from 'react-icons/ti'
+import {FiMoreVertical} from 'react-icons/fi'
+import {IProject} from '../../types/types'
+import ProjectStage from './project_stage'
+import Divider from '../base/divider'
 
 const ProjectCard: React.FunctionComponent<IProject> = ({
   address,
@@ -21,9 +21,12 @@ const ProjectCard: React.FunctionComponent<IProject> = ({
           <FiMoreVertical />
         </div>
         {image || (
-          <img
-            className={style.image}
-            src='\images\blank.jpg'
+          <Image
+            width={360}
+            height={210}
+            // className={style.image}
+            priority
+            src='/images/blank.jpg'
             alt='project image'
           />
         )}
@@ -42,7 +45,7 @@ const ProjectCard: React.FunctionComponent<IProject> = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ProjectCard;
+export default ProjectCard
