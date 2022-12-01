@@ -10,9 +10,6 @@ interface Props {
 const Layout: React.FunctionComponent<Props> = ({children}): JSX.Element => {
   return (
     <div className={style.layoutContainer}>
-      <Head>
-        <title>Project management app</title>
-      </Head>
       <Sidebar />
       <main className={style.mainBlock}>{children}</main>
     </div>

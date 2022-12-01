@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import React from 'react'
 import GridLayout from '../components/layouts/grid_layout'
 import PageLayout from '../components/layouts/pageLayout'
@@ -7,6 +8,9 @@ function ContactsPage(): JSX.Element {
   return (
     <>
       <PageLayout title='Contacts'>
+        <Head>
+          <title>Contacts Page</title>
+        </Head>
         <GridLayout>
           <ProjectCard
             name='first'
