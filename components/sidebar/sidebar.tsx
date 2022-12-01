@@ -67,7 +67,7 @@ const Sidebar = (): JSX.Element => {
     <aside className={style.sidebar}>
       <Logo_block />
       <MenuLayout className={style.sidebar__nav}>{items}</MenuLayout>
-      <Divider />
+      <Divider className={style.divider}/>
 
       <MenuLayout className={style.sidebar__projectsBlock}>
         <h3 className={style.sidebar__subheader}>Favourites</h3>
@@ -82,7 +82,7 @@ const Sidebar = (): JSX.Element => {
       </MenuLayout>
       <MenuLayout className={style.sidebar__nav}>{helpers}</MenuLayout>
 
-      <Divider />
+      <Divider className={style.divider}/>
       <UserBlock />
     </aside>
   )

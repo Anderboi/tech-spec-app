@@ -40,11 +40,15 @@
 // Tablets
 @media screen and (max-width: 1024px) {
   .sidebar {
-    width: 10rem;
+    width: $sm-sidebar-width;
     align-items: center;
 
     .sidebar__subheader {
       display: none;
+    }
+
+    .divider {
+      width: 4.8rem;
     }
   }
 }

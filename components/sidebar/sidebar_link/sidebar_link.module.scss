@@ -31,12 +31,15 @@
 
 // Tablets
 @media screen and (max-width: 1024px) {
-  .name {
-    display: none;
+  .item {
+    padding: 1rem;
+
+    .name {
+      display: none;
+    }
   }
 }
 
 // Mobile
 @media screen and (max-width: 600px) {
-  
 }
