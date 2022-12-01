@@ -17,15 +17,26 @@
 
   .icon {
     font-size: 2.4rem;
-
   }
 }
 
 .active {
   border-color: $color-secondary;
-  
+
   .icon {
     color: $color-secondary;
-    fill:  $color-secondary;
+    fill: $color-secondary;
   }
+}
+
+// Tablets
+@media screen and (max-width: 1024px) {
+  .name {
+    display: none;
+  }
+}
+
+// Mobile
+@media screen and (max-width: 600px) {
+  
 }

@@ -23,13 +23,17 @@
     }
   }
 
-  .sidebar__projectsBlock{
+  .sidebar__projectsBlock {
     flex-grow: 1;
   }
 
-  .sidebar__subheader{
+  .sidebar__subheader {
     color: $color-tertiary;
     padding: 0 2rem;
+  }
+
+  .addLink {
+    color: $color-tertiary;
   }
 }
 
@@ -38,12 +42,16 @@
   .sidebar {
     width: 10rem;
     align-items: center;
+
+    .sidebar__subheader {
+      display: none;
+    }
   }
 }
 
 // Mobile
 @media screen and (max-width: 600px) {
-.sidebar {
-  display: none;
-}
+  .sidebar {
+    display: none;
+  }
 }

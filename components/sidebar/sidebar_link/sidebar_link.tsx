@@ -16,7 +16,7 @@ const SidebarLink = ({ href, icon, name }: menuItem):JSX.Element => {
       className={cn(style.item, router.pathname == href && style.active)}
     >
       <span className={style.icon}>{icon}</span>
-      {name}
+      <span className={style.name}>{name}</span>
     </Link>
   );
 }

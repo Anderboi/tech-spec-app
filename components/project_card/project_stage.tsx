@@ -8,7 +8,6 @@ interface IStage {
 }
 
 const ProjectStage = (stage: IStage): JSX.Element => {
-  console.log(stage.stage);
 
   switch (stage.stage) {
     case "Feasibility":

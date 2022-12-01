@@ -21,11 +21,12 @@ const ProjectCard: React.FunctionComponent<IProject> = ({
           <FiMoreVertical />
         </div>
         {image || (
-          <Image
-            width={360}
-            height={210}
-            // className={style.image}
-            priority
+          <img
+
+            // width={360}
+            // height={210}
+            className={style.image}
+            // priority
             src='/images/blank.jpg'
             alt='project image'
           />

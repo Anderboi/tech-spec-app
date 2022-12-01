@@ -9,12 +9,12 @@ interface Props {
 
 const Layout: React.FunctionComponent<Props> = ({children}): JSX.Element => {
   return (
-    <div className={style.layout_container}>
+    <div className={style.layoutContainer}>
       <Head>
         <title>Project management app</title>
       </Head>
       <Sidebar />
-      <main className={style.main_block}>{children}</main>
+      <main className={style.mainBlock}>{children}</main>
     </div>
   );
 };

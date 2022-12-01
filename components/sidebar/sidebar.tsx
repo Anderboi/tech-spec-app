@@ -10,7 +10,6 @@ import {RiContactsLine, RiStackLine} from 'react-icons/ri'
 import {BsFillSquareFill} from 'react-icons/bs'
 import {MdOutlineAddBox} from 'react-icons/md'
 import {menuItem} from '../../types/nav_item'
-import {IProject} from '../../types/types'
 
 const menuItems: menuItem[] = [
   {
@@ -63,14 +62,6 @@ const helpers = helperItems.map(({href, icon, id, name}: menuItem) => {
   return <SidebarLink key={id} href={href} icon={icon} name={name} />
 })
 
-// <span className={style.addLink}>
-// <SidebarLink
-//   href='/'
-//   icon={<MdOutlineAddBox />}
-//   name='Add New Project'
-//   </span>
-// />
-
 const Sidebar = (): JSX.Element => {
   return (
     <aside className={style.sidebar}>
@@ -81,6 +72,13 @@ const Sidebar = (): JSX.Element => {
       <MenuLayout className={style.sidebar__projectsBlock}>
         <h3 className={style.sidebar__subheader}>Favourites</h3>
         {projectsList}
+        <span className={style.addLink}>
+          <SidebarLink
+            href='/'
+            icon={<MdOutlineAddBox />}
+            name='Add New Project'
+          />
+        </span>
       </MenuLayout>
       <MenuLayout className={style.sidebar__nav}>{helpers}</MenuLayout>
 

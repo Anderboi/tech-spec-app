@@ -1,7 +1,6 @@
 @use '../../../styles/abstracts' as *;
 
 .container {
-
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -17,7 +16,7 @@
     justify-content: flex-end;
     flex-grow: 1;
 
-    .name{
+    .name {
       font-weight: 700;
       font-size: 1.8rem;
     }
@@ -32,6 +31,17 @@
   .icon {
     font-size: 2rem;
     color: $color-tertiary;
-
   }
+}
+
+// Tablets
+@media screen and (max-width: 1024px) {
+  .infoBlock,
+  .icon {
+    display: none!important;
+  }
+}
+
+// Mobile
+@media screen and (max-width: 600px) {
 }

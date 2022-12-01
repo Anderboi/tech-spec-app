@@ -1,14 +1,27 @@
 @use '../styles/abstracts' as *;
 
-.layout_container {
+.layoutContainer {
   display: grid;
   grid-template-columns: $sidebar-width 1fr;
 
-  .main_block {
+  .mainBlock {
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 2rem;
+  }
+}
 
+// Tablets
+@media screen and (max-width: 1024px) {
+  .layoutContainer {
+    grid-template-columns: $sm-sidebar-width 1fr;
+  }
+}
+
+// Mobile
+@media screen and (max-width: 600px) {
+  .layoutContainer {
+    grid-template-columns: 1fr;
   }
 }
