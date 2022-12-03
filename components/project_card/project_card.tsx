@@ -6,15 +6,17 @@ import {FiMoreVertical} from 'react-icons/fi'
 import {IProject} from '../../types/types'
 import ProjectStage from './project_stage'
 import Divider from '../base/divider'
+import Link from 'next/link'
 
 const ProjectCard: React.FunctionComponent<IProject> = ({
+  id,
   address,
   area,
   image,
   stage,
 }): JSX.Element => {
   return (
-    <div className={style.card}>
+    <Link href={`/project/${id}`} className={style.card}>
       <div className={style.image_conteiner}>
         <div className={style.icons_block}>
           <TiStarOutline />
@@ -45,7 +47,7 @@ const ProjectCard: React.FunctionComponent<IProject> = ({
           <ProjectStage stage={stage} />
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
 

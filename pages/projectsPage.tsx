@@ -5,6 +5,10 @@ import ProjectCard from '../components/project_card/project_card'
 import Head from 'next/head'
 
 function ProjectsPage() {
+
+
+
+
   return (
     <>
       <PageLayout title='Projects'>
@@ -28,14 +32,14 @@ function ProjectsPage() {
           />
           <ProjectCard
             name='first'
-            id={2}
+            id={3}
             address='Rublevskoe s. 3/43'
             area={64}
             stage='Feasibility'
           />
           <ProjectCard
             name='first'
-            id={2}
+            id={4}
             address='Rublevskoe s. 3/43'
             area={64}
             stage='Feasibility'
@@ -44,6 +48,16 @@ function ProjectsPage() {
       </PageLayout>
     </>
   )
+}
+
+export function getStaticProps () {
+
+  // const data =
+
+
+  // return {
+  //   props:
+  // }
 }
 
 export default ProjectsPage

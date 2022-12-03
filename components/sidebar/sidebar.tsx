@@ -70,7 +70,7 @@ const Sidebar = (): JSX.Element => {
       <Divider className={style.divider}/>
 
       <MenuLayout className={style.sidebar__projectsBlock}>
-        <h3 className={style.sidebar__subheader}>Favourites</h3>
+        <span className={style.sidebar__subheader}>Favourites</span>
         {projectsList}
         <span className={style.addLink}>
           <SidebarLink
