@@ -50,14 +50,14 @@ function ProjectsPage() {
   )
 }
 
-export function getStaticProps () {
+// export function getStaticProps () {
 
-  // const data =
+//   // const data =
 
 
-  // return {
-  //   props:
-  // }
-}
+//   // return {
+//   //   props:
+//   // }
+// }
 
 export default ProjectsPage

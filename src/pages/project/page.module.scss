@@ -1,0 +1,43 @@
+@use '../../styles/abstracts' as *;
+
+
+.main {
+
+	.section {
+
+		margin: 2rem 0;
+	}
+
+	.header {
+		background-color: $color-bg;
+		overflow: hidden;
+		border-radius: $border-radius;
+
+		.header__image {
+			object-fit: cover;
+		}
+
+		.textblock {
+			display: flex;
+			flex-direction: column;
+			padding: 2rem 3rem;
+			color: $color-tertiary;
+			font-size: 1.4rem;
+			font-weight: 500;
+
+			.textblock__header {
+				color: $color-primary;
+			}
+	}
+
+
+		.date{
+			font-size: 1.2rem;
+		}
+	}
+
+	.link {
+		color: #0064D9;
+		text-decoration: underline;
+	}
+}
