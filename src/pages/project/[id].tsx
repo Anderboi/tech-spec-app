@@ -4,6 +4,7 @@ import style from './page.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
 import cn from 'classnames'
+import GridLayout from './../../components/layouts/grid_layout'
 
 const Project = () => {
   const route = useRouter()
@@ -28,9 +29,9 @@ const Project = () => {
         </div>
       </section>
 			<section className={style.section}>
-				<div>
+				<div className={style.subheader}>
 					<h3>Categories</h3>
-					<Link href={'#'}>See all</Link>
+					<Link href={'#'} className={style.link}>See all</Link>
 				</div>
 				<article>
 					<span>Project Data</span>
@@ -40,13 +41,19 @@ const Project = () => {
 				</article>
 			</section>
 			<section className={style.section}>
-				<div>
+				<div className={style.subheader}>
 					<h3>Gallery</h3>
-					<Link href={'#'}>See all</Link>
+					<Link href={'#'} className={style.link}>See all</Link>
 				</div>
-				<article>
+				<GridLayout>
+					{/* <Image src={'/images/blank.jpg'} alt='image' width={320} height={200}></Image>
 					<Image src={'/images/blank.jpg'} alt='image' width={320} height={200}></Image>
-				</article>
+					<Image src={'/images/blank.jpg'} alt='image' width={320} height={200}></Image>
+					<Image src={'/images/blank.jpg'} alt='image' width={320} height={200}></Image>
+					<Image src={'/images/blank.jpg'} alt='image' width={320} height={200}></Image>
+					<Image src={'/images/blank.jpg'} alt='image' width={320} height={200}></Image>
+					<Image src={'/images/blank.jpg'} alt='image' width={320} height={200}></Image> */}
+				</GridLayout>
 			</section>
     </main>
   )

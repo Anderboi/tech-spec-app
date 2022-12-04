@@ -5,6 +5,10 @@
   flex-direction: column;
   gap: 2rem;
 
+  position: fixed;
+  top: 0;
+  left: 0;
+
   width: var(--sidebar-width);
   height: 100vh;
   padding: 3rem 3rem 2rem;

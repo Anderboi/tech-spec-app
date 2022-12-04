@@ -5,7 +5,7 @@
 
 	.section {
 
-		margin: 2rem 0;
+		margin: 3rem 0;
 	}
 
 	.header {
@@ -39,5 +39,12 @@
 	.link {
 		color: #0064D9;
 		text-decoration: underline;
+	}
+
+	.subheader {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-bottom: 2rem;
 	}
 }
