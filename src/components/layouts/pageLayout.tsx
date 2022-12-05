@@ -1,6 +1,6 @@
 import React from 'react'
 import Divider from '../base/divider'
-import PageSubheader from '../page_subheader/page_subheader'
+import PageSubheader from '../base/page_subheader/page_subheader'
 import style from './pageLayout.module.scss'
 
 interface Props {

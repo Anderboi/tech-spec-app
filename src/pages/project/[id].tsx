@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import cn from 'classnames'
 import GridLayout from './../../components/layouts/grid_layout'
+import TabContainer from '../../components/tabs/TabContainer'
 
 const Project = () => {
   const route = useRouter()
@@ -33,12 +34,7 @@ const Project = () => {
 					<h3>Categories</h3>
 					<Link href={'#'} className={style.link}>See all</Link>
 				</div>
-				<article>
-					<span>Project Data</span>
-					<span>Drawings</span>
-					<span>Materials</span>
-					<span>Contacts</span>
-				</article>
+				<TabContainer/>
 			</section>
 			<section className={style.section}>
 				<div className={style.subheader}>

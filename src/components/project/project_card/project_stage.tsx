@@ -1,5 +1,5 @@
 import React from "react";
-import { Stage } from "../../types/types";
+import { Stage } from "../../../types/types";
 import style from "./project_stage.module.scss";
 import cn from "classnames";
 

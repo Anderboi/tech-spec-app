@@ -1,7 +1,7 @@
 import React from 'react'
 import GridLayout from '../components/layouts/grid_layout'
 import PageLayout from '../components/layouts/pageLayout'
-import ProjectCard from '../components/project_card/project_card'
+import ProjectCard from '../components/project/project_card/project_card'
 import Head from 'next/head'
 
 function ProjectsPage() {

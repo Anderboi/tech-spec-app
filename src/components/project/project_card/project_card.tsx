@@ -3,9 +3,9 @@ import React from 'react'
 import style from './project_card.module.scss'
 import {TiStarOutline, TiStarFullOutline} from 'react-icons/ti'
 import {FiMoreVertical} from 'react-icons/fi'
-import {IProject} from '../../types/types'
+import {IProject} from '../../../types/types'
 import ProjectStage from './project_stage'
-import Divider from '../base/divider'
+import Divider from '../../base/divider'
 import Link from 'next/link'
 
 const ProjectCard: React.FunctionComponent<IProject> = ({
