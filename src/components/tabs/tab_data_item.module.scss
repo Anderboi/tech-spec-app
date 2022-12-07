@@ -1,0 +1,41 @@
+@use '../../styles/abstracts' as *;
+
+.container {
+  background-color: $color-bg;
+  margin: 2rem 0;
+  border-radius: $border-radius;
+
+  .container__head {
+    padding: 2rem 3rem;
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .header {
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+    .icon {
+      font-size: 1.8rem;
+    }
+  }
+
+  .container__body {
+    max-height: 0px;
+    transition: all .5s ease;
+    overflow: hidden;
+		opacity: 0;
+		.data{
+			padding: 2rem 3rem;
+		}
+  }
+  .active {
+		max-height: 20em;
+		opacity: 1;
+
+  }
+}

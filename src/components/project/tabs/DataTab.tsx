@@ -1,8 +1,16 @@
 import React from 'react'
-import style from './data_tab.module.scss'
+import TabDataItem from '../../tabs/TabDataItem'
 
 const DataTab = () => {
-  return <div className={style.container}>DataTab</div>
+  return (
+    <>
+    <TabDataItem>Residents Profiles</TabDataItem>
+    <TabDataItem>Planning Requirements</TabDataItem>
+    <TabDataItem>Demolition</TabDataItem>
+    <TabDataItem>Utilities</TabDataItem>
+    <TabDataItem>Equipment</TabDataItem>
+    </>
+  )
 }
 
 export default DataTab
