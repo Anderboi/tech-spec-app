@@ -4,12 +4,14 @@ import {IoIosArrowDown} from 'react-icons/io'
 import cn from 'classnames'
 
 interface Props {
+  title: string
   children: React.ReactNode
   className?: string
 }
 
-const TabDataItem: React.FunctionComponent<Props> = ({
-  children = 'Some Text',
+const TabContentItem: React.FunctionComponent<Props> = ({
+  title = 'Some Text',
+  children,
   className,
 }) => {
   const [open, setOpen] = useState(false)
@@ -21,19 +23,12 @@ const TabDataItem: React.FunctionComponent<Props> = ({
   return (
     <div className={style.container}>
       <div className={style.container__head} onClick={handleOpen}>
-        <span className={style.header}>{children}</span>
+        <span className={style.header}>{title}</span>
         <IoIosArrowDown className={cn(style.icon, {[style.icon_active]: open})} />
       </div>
       <div className={cn(style.container__body, {[style.active]: open})}>
           <article className={style.data}>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error,
-            dolores? Alias error rem aspernatur. Ratione at dolorem commodi a
-            laudantium fugit earum voluptatum quasi accusamus, veritatis quae,
-            ab, excepturi adipisci?
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error,
-            dolores? Alias error rem aspernatur. Ratione at dolorem commodi a
-            laudantium fugit earum voluptatum quasi accusamus, veritatis quae,
-            ab, excepturi adipisci?
+          {children}
           </article>
         </div>
       {/* {open && (
@@ -50,4 +45,4 @@ const TabDataItem: React.FunctionComponent<Props> = ({
   )
 }
 
-export default TabDataItem
+export default TabContentItem

@@ -1,16 +1,17 @@
 import React from 'react'
 import TabDataItem from '../../tabs/TabDataItem'
 
-const DataTab = () => {
+interface Props {
+  children: React.ReactNode
+  className?: string
+}
+
+const TabContent: React.FunctionComponent<Props> = ({children}):JSX.Element => {
   return (
     <>
-    <TabDataItem>Residents Profiles</TabDataItem>
-    <TabDataItem>Planning Requirements</TabDataItem>
-    <TabDataItem>Demolition</TabDataItem>
-    <TabDataItem>Utilities</TabDataItem>
-    <TabDataItem>Equipment</TabDataItem>
+    {children}
     </>
   )
 }
 
-export default DataTab
+export default TabContent

@@ -19,5 +19,5 @@ export interface Project {
   address: string;
   area: number;
   image?: any;
-  stage: Stage;
+  stage?: Stage;
 }

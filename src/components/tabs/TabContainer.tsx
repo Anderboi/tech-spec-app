@@ -5,10 +5,11 @@ import TabBody from './TabBody'
 import TabHead from './TabHead'
 import style from './tabs.module.scss'
 import {GrStatusInfo} from 'react-icons/gr'
-import DataTab from '../project/tabs/DataTab'
+import TabContent from '../project/tabs/DataTab'
+import TabContentItem from './TabDataItem'
 
 const TabContainer = ({router}: any) => {
-	const rout = useRouter()
+  const rout = useRouter()
   const {
     query: {tab},
   } = router
@@ -21,37 +22,62 @@ const TabContainer = ({router}: any) => {
     <>
       <TabHead className={style.header}>
         <Tab
-					icon={<GrStatusInfo/>}
-					selected={isTabOne}
-					href={{pathname: rout.asPath, query: {tab: '1'}}}>
+          icon={<GrStatusInfo />}
+          selected={isTabOne}
+          href={{pathname: rout.asPath, query: {tab: '1'}}}
+        >
           Project Data
         </Tab>
         <Tab
-        icon={<GrStatusInfo/>}
-        selected={isTabTwo}
-        href={{pathname: rout.asPath, query: {tab: '2'}}}>
+          icon={<GrStatusInfo />}
+          selected={isTabTwo}
+          href={{pathname: rout.asPath, query: {tab: '2'}}}
+        >
           Project Data
         </Tab>
         <Tab
-        icon={<GrStatusInfo/>}
-        selected={isTabThree}
-        href={{pathname: rout.asPath, query: {tab: '3'}}}>
+          icon={<GrStatusInfo />}
+          selected={isTabThree}
+          href={{pathname: rout.asPath, query: {tab: '3'}}}
+        >
           Project Data
         </Tab>
         <Tab
-        icon={<GrStatusInfo/>}
-        selected={isTabFour}
-        href={{pathname: rout.asPath, query: {tab: '4'}}}>
+          icon={<GrStatusInfo />}
+          selected={isTabFour}
+          href={{pathname: rout.asPath, query: {tab: '4'}}}
+        >
           Project Data
         </Tab>
-        
       </TabHead>
       <TabBody>
-				{isTabOne && <DataTab/>}
-				{isTabTwo && <div>Tab 2</div>}
-				{isTabThree && <div>Tab 3</div>}
-				{isTabFour && <div>Tab 4</div>}
-			</TabBody>
+        {isTabOne && (
+          <TabContent>
+            <TabContentItem title='Residents Profiles'>Residents:</TabContentItem>
+            <TabContentItem title='Planning Requirements'>one</TabContentItem>
+            <TabContentItem title='Demolition'>
+              <h4>Engineering Systems:</h4>
+              <span>Heating:</span>
+              <span>Plumbing:</span>
+              <span>Electrical system:</span>
+              <span>Conditioning and ventilation:</span>
+              <span>Furniture:</span>
+              <h4>Structural:</h4>
+              <span>Walls:</span>
+              <span>Plaster:</span>
+              <span>Floor Screed:</span>
+              <span>Entrance doors:</span>
+              <span>Doors:</span>
+              <span>Windows:</span>
+              </TabContentItem>
+            <TabContentItem title='Utilities'>one</TabContentItem>
+            <TabContentItem title='Equipment'>one</TabContentItem>
+          </TabContent>
+        )}
+        {isTabTwo && <TabContent>Second</TabContent>}
+        {isTabThree && <TabContent>Third</TabContent>}
+        {isTabFour && <TabContent>Fourth</TabContent>}
+      </TabBody>
     </>
   )
 }
