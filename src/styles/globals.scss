@@ -1,6 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap");
-@import "normalize";
-@import "abstracts/colors";
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+@import 'normalize';
+@import 'abstracts/colors';
+
+* {
+  box-sizing: border-box;
+}
 
 html {
   font-size: 10px;
@@ -20,12 +24,6 @@ body {
   color: $color-primary;
 }
 
-//* html,
-// body {
-//   padding: 0;
-//   margin: 0;
-*// }
-
 h1,
 h2,
 h3,
@@ -33,9 +31,16 @@ h4,
 h5 {
   margin: 0;
 }
+h1 {
+  font-size: 3rem;
+}
 
-h3{
-  font-size: 1.8rem
+h2 {
+  font-size: 2.4rem;
+}
+
+h3 {
+  font-size: 1.8rem;
 }
 
 a {
@@ -43,12 +48,21 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+// Mobile
+@media screen and (max-width: 600px) {
+  body{
+    padding-top: env(safe-area-inset-top, 1em);
+
+  }
 }
 
 @media (prefers-color-scheme: light) {
   html {
     color-scheme: light;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
   }
 }

@@ -16,18 +16,23 @@
     align-items: center;
 
     .header {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       font-weight: 500;
     }
     .icon {
       font-size: 1.8rem;
+			transition: all .1s ease;
+
+			&_active{
+				transform: rotate(180deg);
+			}
     }
   }
 
   .container__body {
     max-height: 0px;
-    transition: all .5s ease;
-    overflow: hidden;
+    transition: all .6s ease;
+    overflow-y: scroll;
 		opacity: 0;
 		.data{
 			padding: 2rem 3rem;

@@ -13,8 +13,37 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+
+    //! Strict Checks
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "strictBindCallApply": true,
+
+    //! Linter Checks
+    "noPropertyAccessFromIndexSignature": false,
+    "noUncheckedIndexedAccess": true,
+
+    "noImplicitReturns": true, // https://eslint.org/docs/rules/consistent-return ?
+    "noFallthroughCasesInSwitch": true, // https://eslint.org/docs/rules/no-fallthrough
+    "noUnusedLocals": false, // https://eslint.org/docs/rules/no-unused-vars
+    "noUnusedParameters": false, // https://eslint.org/docs/rules/no-unused-vars#args
+
+    //* advanced
+    "allowUnreachableCode": true, // https://eslint.org/docs/rules/no-unreachable
+    "allowUnusedLabels": true,// https://eslint.org/docs/rules/no-unused-labels
+
+    //! Base Strict Checks
+    "noImplicitUseStrict": false,
+    "suppressExcessPropertyErrors": false,
+    "suppressImplicitAnyIndexErrors": false,
+    "noStrictGenericChecks": false,
   },
+
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }

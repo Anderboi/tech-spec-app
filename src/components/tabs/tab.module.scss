@@ -7,7 +7,6 @@
 	border-radius: $border-radius;
 	width: fit-content;
 	min-width: 16rem;
-	background-color: rgba(255, 255, 255, 0.3);
 
 	display: flex;
 	align-items: center;
@@ -15,15 +14,15 @@
 	cursor: pointer;
 
 	&:hover{
-		background-color: $color-tertiary;
+		background-color: $color-hover;
 	}
 }
 
 .selected{
-	background-color: white;
+	background-color: $color-bg;
 	outline: none !important;
 
 	&:hover{
-		background-color: white;
+		background-color: $color-hover;
 	}
 }

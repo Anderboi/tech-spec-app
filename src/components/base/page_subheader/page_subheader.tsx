@@ -11,7 +11,7 @@ interface Props {
 const PageSubheader = ({title}: Props) => {
   return (
     <div className={style.container}>
-      <h3 className={style.tiltle}>{title}</h3>
+      <h2 className={style.title}>{title}</h2>
       <div className={style.iconsBlock}>
         <MdOutlineAddBox  className={style.icon}/>
         <IoSearch  className={style.icon}/>

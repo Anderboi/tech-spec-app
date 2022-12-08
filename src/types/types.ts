@@ -12,9 +12,10 @@ export type Stage =
   | "Production"
   | "Construction";
 
-export interface IProject {
+export interface Project {
   name: string;
   id:number;
+  initDate: Date;
   address: string;
   area: number;
   image?: any;

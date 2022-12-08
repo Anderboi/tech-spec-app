@@ -6,27 +6,28 @@ import Link from 'next/link'
 import cn from 'classnames'
 import GridLayout from './../../components/layouts/grid_layout'
 import TabContainer from '../../components/tabs/TabContainer'
+import {Project} from '../../types/types'
 
-const Project = () => {
+const Project: React.FunctionComponent<Project> = ({address,area,id,name = 'Project Name',stage,image,initDate = new Date().toLocaleString()}):JSX.Element => {
   const route = useRouter()
 
   return (
     <main className={style.main}>
       <section className={cn(style.header, style.section)}>
         <Image
-          src={'/images/blank.jpg'}
+          src={image ? image : '/images/blank.jpg'}
           alt='Project image'
           width={960}
           height={280}
           className={style.header__image}
         />
         <div className={style.textblock}>
-          <h3 className={style.textblock__header}>Project Name</h3>
-          <span className={style.date}>11/03/2022</span>
-          <span>Address: <Link href={'#'} className={style.link}>Recent address</Link></span>
-          <span>Area</span>
-          <span>Client</span>
-          <span>Team</span>
+          <h3 className={style.textblock__header}>{name}</h3>
+          <span className={style.date}>{`${initDate}`}</span>
+          <span>Address: <Link href={'#'} className={style.link}>{address}</Link></span>
+          <span>Area: <span>{area}</span></span>
+          <span>Client: <span></span></span>
+          <span>Team: </span>
         </div>
       </section>
 			<section className={style.section}>

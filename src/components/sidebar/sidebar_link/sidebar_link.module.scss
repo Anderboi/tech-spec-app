@@ -12,7 +12,8 @@
   line-height: 1em;
 
   &:hover {
-    background-color: $color-bg-variant;
+    // background-color: $color-bg-variant;
+    background-color: $color-hover;
   }
 
   .icon {
@@ -21,10 +22,11 @@
 }
 
 .active {
-  background-color: $color-bg-variant;
+  // background-color: $color-bg-variant;
+  background-color: $color-hover;
   outline: none !important;
-  // font-weight: 500;
-
+  font-weight: 500;
+  color: $color-secondary;
   // border-color: $color-secondary;
 
   // .icon {
