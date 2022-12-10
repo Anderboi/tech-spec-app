@@ -56,19 +56,23 @@ const TabContainer = ({router}: any) => {
             <TabContentItem title='Residents Profiles'>Residents:</TabContentItem>
             <TabContentItem title='Planning Requirements'>one</TabContentItem>
             <TabContentItem title='Demolition'>
-              <h4>Engineering Systems:</h4>
-              <span>Heating:</span>
-              <span>Plumbing:</span>
-              <span>Electrical system:</span>
-              <span>Conditioning and ventilation:</span>
-              <span>Furniture:</span>
-              <h4>Structural:</h4>
-              <span>Walls:</span>
-              <span>Plaster:</span>
-              <span>Floor Screed:</span>
-              <span>Entrance doors:</span>
-              <span>Doors:</span>
-              <span>Windows:</span>
+              <div>
+                <h4>Engineering Systems:</h4>
+                <span>Heating:</span>
+                <span>Plumbing:</span>
+                <span>Electrical system:</span>
+                <span>Conditioning and ventilation:</span>
+                <span>Furniture:</span>
+              </div>
+              <div>
+                <h4>Structural:</h4>
+                <span>Walls:</span>
+                <span>Plaster:</span>
+                <span>Floor Screed:</span>
+                <span>Entrance doors:</span>
+                <span>Doors:</span>
+                <span>Windows:</span>
+              </div>
               </TabContentItem>
             <TabContentItem title='Utilities'>one</TabContentItem>
             <TabContentItem title='Equipment'>one</TabContentItem>
