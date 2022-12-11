@@ -5,10 +5,11 @@ import TabBody from './TabBody'
 import TabHead from './TabHead'
 import style from './tabs.module.scss'
 import {GrStatusInfo} from 'react-icons/gr'
+import {IoIosMore} from 'react-icons/io'
 import TabContent from '../project/tabs/DataTab'
 import TabContentItem from './TabDataItem'
 
-const TabContainer = ({router}: any) => {
+const ProjectDataTabContainer = ({router}: any) => {
   const rout = useRouter()
   const {
     query: {tab},
@@ -49,6 +50,7 @@ const TabContainer = ({router}: any) => {
         >
           Project Data
         </Tab>
+        <IoIosMore />
       </TabHead>
       <TabBody>
         {isTabOne && (
@@ -86,4 +88,4 @@ const TabContainer = ({router}: any) => {
   )
 }
 
-export default withRouter(TabContainer)
+export default withRouter(ProjectDataTabContainer)

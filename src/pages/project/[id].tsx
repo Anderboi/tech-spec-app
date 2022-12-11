@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import cn from 'classnames'
 import GridLayout from './../../components/layouts/grid_layout'
-import TabContainer from '../../components/tabs/TabContainer'
+import ProjectDataTabContainer from '../../components/tabs/ProjectDataTabContainer'
 import {Project} from '../../types/types'
 
 const Project: React.FunctionComponent<Project> = ({
@@ -47,13 +47,13 @@ const Project: React.FunctionComponent<Project> = ({
         </div>
       </section>
       <section className={style.section}>
-        <div className={style.subheader}>
+        {/* <div className={style.subheader}>
           <h3>Categories</h3>
           <Link href={'#'} className={style.link}>
             See all
           </Link>
-        </div>
-        <TabContainer />
+        </div> */}
+        <ProjectDataTabContainer />
       </section>
       <section className={style.section}>
         <div className={style.subheader}>
