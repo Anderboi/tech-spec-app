@@ -5,6 +5,8 @@
   gap: 2rem;
   align-items: flex-end;
 
+  fill: getColor(accent);
+
   .logo__text {
     font-size: 4rem;
     font-weight: 700;

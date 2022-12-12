@@ -1,4 +1,4 @@
-
+@use '../../styles/abstracts' as *;
 
 .header{
 	display: flex;
@@ -7,4 +7,8 @@
 	overflow: scroll;
 	scroll-behavior: smooth;
 
+	background-color: getColor(bg);
+	border-radius: calc($border-radius);
+	padding: 1rem;
+	// border: 0.3rem solid getColor(bg);
 }

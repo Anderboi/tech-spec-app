@@ -4,7 +4,7 @@ import Tab from './Tab'
 import TabBody from './TabBody'
 import TabHead from './TabHead'
 import style from './tabs.module.scss'
-import {GrStatusInfo} from 'react-icons/gr'
+import {BsClipboardData} from 'react-icons/bs'
 import {IoIosMore} from 'react-icons/io'
 import TabContent from '../project/tabs/DataTab'
 import TabContentItem from './TabDataItem'
@@ -23,28 +23,28 @@ const ProjectDataTabContainer = ({router}: any) => {
     <>
       <TabHead className={style.header}>
         <Tab
-          icon={<GrStatusInfo />}
+          icon={<BsClipboardData />}
           selected={isTabOne}
           href={{pathname: rout.asPath, query: {tab: '1'}}}
         >
           Project Data
         </Tab>
         <Tab
-          icon={<GrStatusInfo />}
+          icon={<BsClipboardData />}
           selected={isTabTwo}
           href={{pathname: rout.asPath, query: {tab: '2'}}}
         >
           Project Data
         </Tab>
         <Tab
-          icon={<GrStatusInfo />}
+          icon={<BsClipboardData />}
           selected={isTabThree}
           href={{pathname: rout.asPath, query: {tab: '3'}}}
         >
           Project Data
         </Tab>
         <Tab
-          icon={<GrStatusInfo />}
+          icon={<BsClipboardData />}
           selected={isTabFour}
           href={{pathname: rout.asPath, query: {tab: '4'}}}
         >

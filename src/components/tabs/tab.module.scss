@@ -2,7 +2,7 @@
 
 .tab{
 	padding: 1rem 2em;
-	font-size: 1.6rem;
+	font-size: 1.5rem;
 	font-weight: 500;
 	border-radius: $border-radius;
 	width: fit-content;
@@ -14,15 +14,16 @@
 	cursor: pointer;
 
 	&:hover{
-		background-color: $color-hover;
+		background-color: getColor(bg-variant);
 	}
 }
 
 .selected{
-	background-color: $color-bg;
+	background-color: getColor(accent);
+	color: getColor(bg);
 	outline: none !important;
 
 	&:hover{
-		background-color: $color-hover;
+		background-color: getColor(accent);
 	}
 }
