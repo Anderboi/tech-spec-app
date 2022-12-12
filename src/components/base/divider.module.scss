@@ -1,18 +1,17 @@
 @use '../../styles/abstracts' as *;
 
 .main {
-  background-color: $color-tertiary;
+  background-color: getColor(text-secondary);
   height: .1rem;
   width: 100%;
   border: none;
   position: relative;
-  // margin: 0 0 3rem;
 
   &::before {
     content: '';
     width: .1rem;
     height: 1.1rem;
-    background-color: $color-tertiary;
+    background-color: getColor(text-secondary);
     position: absolute;
     left: 0;
     top: -.5rem;
@@ -21,7 +20,7 @@
     content: '';
     width: .1rem;
     height: 1.1rem;
-    background-color: $color-tertiary;
+    background-color: getColor(text-secondary);
     position: absolute;
     right: 0;
     top: -.5rem;

@@ -12,14 +12,14 @@
     display: flex;
     gap: 1rem;
     font-size: 2.4rem;
-    color: $color-tertiary;
+    color: getColor(text-secondary);
 
     .icon {
       cursor: pointer;
       transition: $transition;
 
       &:hover {
-        color: $color-secondary;
+        color: getColor(accent);
       }
     }
   }

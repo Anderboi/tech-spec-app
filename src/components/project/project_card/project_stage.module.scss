@@ -8,13 +8,13 @@
     width: 3.4rem;
     height: 3.4rem;
     line-height: 1em;
-    background-color: $color-tertiary;
+    background-color: getColor(text-secondary);
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: 700;
-    color: $color-bg;
-    border: 2px solid $color-bg;
+    color: getColor(bg);
+    border: 2px solid getColor(bg);
     border-radius: $border-radius;
 
     position: absolute;

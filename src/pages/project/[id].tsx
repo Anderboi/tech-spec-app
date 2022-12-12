@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import cn from 'classnames'
 import GridLayout from './../../components/layouts/grid_layout'
-import ProjectDataTabContainer from '../../components/tabs/ProjectDataTabContainer'
+import ProjectDataTabContainer from '../../components/tabs/TabContainer'
 import {Project} from '../../types/types'
 
 const Project: React.FunctionComponent<Project> = ({

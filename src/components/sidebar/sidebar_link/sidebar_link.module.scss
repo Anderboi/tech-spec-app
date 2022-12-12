@@ -3,36 +3,30 @@
 .item {
   font-weight: 500;
   font-size: 1.6rem;
-  // border: 2px solid transparent;
+  line-height: 1em;
+
   padding: 0.6rem 2rem;
-  border-radius: .6rem;
+  border-radius: 0.6rem;
   display: flex;
   gap: 2rem;
   align-items: center;
-  line-height: 1em;
+
+  color: getColor(text-secondary);
 
   &:hover {
-    // background-color: $color-bg-variant;
-    background-color: $color-hover;
+    background-color: getColor(bg-variant);
   }
 
   .icon {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 
 .active {
-  // background-color: $color-bg-variant;
-  background-color: $color-hover;
+  background-color: getColor(bg-variant);
   outline: none !important;
   font-weight: 500;
-  color: $color-secondary;
-  // border-color: $color-secondary;
-
-  // .icon {
-    // color: $color-secondary;
-    // fill: $color-secondary;
-  // }
+  color: getColor(text);
 }
 
 // Tablets

@@ -1,7 +1,7 @@
 @use '../../../styles/abstracts' as *;
 
 .card {
-  background-color: $color-bg;
+  background-color: getColor(bg);
   border-radius: $border-radius;
   overflow: hidden;
   cursor: pointer;
@@ -21,7 +21,7 @@
 
     .info_block__title {
       text-align: center;
-      color: $color-primary;
+      color: getColor(text);
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -33,10 +33,10 @@
       align-items: flex-end;
 
       .area_heading {
-        color: $color-primary;
+        color: getColor(text);
       }
       .area_value {
-        color: $color-tertiary;
+        color: getColor(text-secondary);
       }
     }
   }
@@ -57,7 +57,7 @@
       justify-content: space-between;
 
       z-index: 999;
-      color: $color-bg;
+      color: getColor(bg);
       font-size: 2.4rem;
       padding: 1.4rem;
     }

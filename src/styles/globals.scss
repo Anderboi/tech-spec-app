@@ -2,13 +2,20 @@
 @import 'normalize';
 @import 'abstracts/colors';
 
+:root {
+  @each $name, $color in $colors-light {
+    --color-#{$name}: #{$color};
+  }
+  --theme: 'light';
+}
+
 * {
   box-sizing: border-box;
 }
 
 html {
   font-size: 10px;
-  background: $color-bg-variant;
+  background: getColor(bg-variant);
   scroll-behavior: smooth;
 }
 
@@ -19,9 +26,10 @@ html {
 body {
   height: 100vh;
   font-size: 1.6rem;
+  letter-spacing: 0.5px;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  color: $color-primary;
+  color: getColor(text);
 }
 
 h1,
@@ -33,6 +41,7 @@ h5 {
 }
 h1 {
   font-size: 2.4rem;
+  letter-spacing: -.03rem;
 }
 
 h2 {
@@ -48,21 +57,19 @@ a {
   text-decoration: none;
 }
 
-// Mobile
+//* Mobile
 @media screen and (max-width: 600px) {
-  body{
+  body {
     padding-top: env(safe-area-inset-top, 1em);
-
   }
 }
 
-@media (prefers-color-scheme: light) {
-  html {
-    color-scheme: light;
-  }
-}
+//* dark mode
 @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+  :root {
+      @each $name, $color in $colors-dark {
+        --color-#{$name}: #{$color};
+      }
+      --theme: 'dark';
+    }
   }
-}

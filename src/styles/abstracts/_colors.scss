@@ -1,19 +1,27 @@
-$color-bg: #fff;
-$color-bg-variant: #F3F5F7;
-// $color-bg-variant: #e3e3e3;
-$color-hover: #ECF7F6;
-$color-primary: #000;
-$color-secondary: #01B7A7;
-// $color-secondary: #45E6B4;
-$color-tertiary: #999;
-$color-link: #0064d9;
+//* light mode
+$colors-light: (
+  bg: #fff,
+  bg-variant: #f3f5f7,
+  text: #212121,
+  text-secondary: #999999,
+  accent: #01b7a7,
+  link: #0064d9,
+);
 
-@media (prefers-color-scheme: dark) {
-  $color-bg: #000;
-  $color-bg-variant: #212121;
-  $color-primary: #fff;
-  $color-secondary: #3fcf8e;
-  // $color-secondary: #45E6B4;
-  $color-tertiary: #999;
-  $color-link: #0064d9;
+//* dark mode
+$colors-dark: (
+  bg: #26262e,
+  bg-variant: #1d1b22,
+  text: #dddddf,
+  text-secondary: #7b7b80,
+  accent: #45e6b4,
+  link:
+    map-get(
+      $map: $colors-light,
+      $key: link,
+    ),
+);
+
+@function getColor($color-name) {
+  @return var(--color-#{$color-name});
 }
