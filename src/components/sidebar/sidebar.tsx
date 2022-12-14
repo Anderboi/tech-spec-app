@@ -74,7 +74,7 @@ const Sidebar = (): JSX.Element => {
         {projectsList}
         <span className={style.addLink}>
           <SidebarLink
-            href='/'
+            href='/addProject'
             icon={<MdOutlineAddBox />}
             name='Add New Project'
           />
