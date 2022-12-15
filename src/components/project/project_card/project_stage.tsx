@@ -3,13 +3,13 @@ import { Stage } from "../../../types/types";
 import style from "./project_stage.module.scss";
 import cn from "classnames";
 
-interface IStage {
+interface StageProps {
   stage: Stage
 }
 
-const ProjectStage = (stage: IStage): JSX.Element => {
+const ProjectStage: React.FC<StageProps> = ({stage}): JSX.Element => {
 
-  switch (stage.stage) {
+  switch (stage) {
     case "Feasibility":
       return (
         <div className={style.container}>

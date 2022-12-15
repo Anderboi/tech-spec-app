@@ -3,12 +3,12 @@ import React from 'react'
 import style from './project_card.module.scss'
 import {TiStarOutline, TiStarFullOutline} from 'react-icons/ti'
 import {FiMoreVertical} from 'react-icons/fi'
-import {IProject} from '../../../types/types'
+import {Project} from '../../../types/types'
 import ProjectStage from './project_stage'
 import Divider from '../../base/Divider'
 import Link from 'next/link'
 
-const ProjectCard: React.FunctionComponent<IProject> = ({
+const ProjectCard: React.FunctionComponent<Project> = ({
   id,
   address,
   area,
@@ -44,7 +44,7 @@ const ProjectCard: React.FunctionComponent<IProject> = ({
             <h5 className={style.area_value}>{`${area} sq.m.`}</h5>
           </div>
 
-          <ProjectStage stage={stage} />
+          <ProjectStage stage={stage || 'Concept'} />
         </div>
       </div>
     </Link>
