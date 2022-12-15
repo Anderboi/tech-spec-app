@@ -5,7 +5,7 @@ import {TiStarOutline, TiStarFullOutline} from 'react-icons/ti'
 import {FiMoreVertical} from 'react-icons/fi'
 import {Project} from '../../../types/types'
 import ProjectStage from './project_stage'
-import Divider from '../../base/Divider'
+import CustomDivider from '../../base/Divider'
 import Link from 'next/link'
 
 const ProjectCard: React.FunctionComponent<Project> = ({
@@ -36,7 +36,7 @@ const ProjectCard: React.FunctionComponent<Project> = ({
       </div>
       <div className={style.info_block}>
         <h4 className={style.info_block__title}>{address}</h4>
-        <Divider className={style.divider} />
+        <CustomDivider className={style.divider} />
 
         <div className={style.lower_block}>
           <div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import Divider from '../base/Divider'
+import CustomDivider from '../base/Divider'
 import PageSubheader from '../base/page_subheader/page_subheader'
 import style from './pageLayout.module.scss'
 
@@ -12,7 +12,7 @@ const PageLayout: React.FunctionComponent<Props> = ({title, children}) => {
   return (
     <>
       <PageSubheader title={title} />
-      <Divider className={style.divider} />
+      <CustomDivider className={style.divider} />
 			{children}
 
     </>

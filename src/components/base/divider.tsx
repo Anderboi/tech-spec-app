@@ -5,11 +5,11 @@ import cn from 'classnames'
 export interface DividerProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}
 
-const Divider: React.FC<DividerProps> = ({
+const CustomDivider: React.FC<DividerProps> = ({
   className,
   ...props
 }): JSX.Element => {
   return <div className={cn(style.main, className)} />
 }
 
-export default Divider
+export default CustomDivider
