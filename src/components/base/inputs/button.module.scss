@@ -6,14 +6,23 @@
   min-width: 22rem;
   padding: 1rem 3rem;
   font-weight: 500;
+  border-radius: $border-radius;
+  transition: $transition;
 }
 
 .ghost {
   background-color: transparent;
+
+  &:hover {
+    background-color: getColor(bg-variant);
+  }
 }
 
 .action {
   background-color: getColor(accent);
-  border-radius: $border-radius;
   color: getColor(bg);
+
+  &:hover {
+    background-color: getColor(accent-hover);
+  }
 }

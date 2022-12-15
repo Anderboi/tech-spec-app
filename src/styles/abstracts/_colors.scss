@@ -15,6 +15,7 @@ $colors-dark: (
   text: #dddddf,
   text-secondary: #7b7b80,
   accent: #45e6b4,
+  accent-hover: #3A7E81,
   link:
     map-get(
       $map: $colors-light,
