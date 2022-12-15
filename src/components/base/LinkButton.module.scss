@@ -1,0 +1,7 @@
+@use '../../styles/abstracts' as *;
+
+.link {
+	text-decoration: underline;
+	color: getColor(accent);
+	// font-weight: 500;
+}

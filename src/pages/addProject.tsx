@@ -1,6 +1,9 @@
 import React from 'react'
 import FormBlock from '../components/base/form/formBlock/FormBlock'
+import LinkButton from '../components/base/LinkButton'
 import style from './addProject.module.scss'
+import Button from './../components/base/inputs/Button'
+import Input from '../components/base/inputs/Input'
 
 const AddProject = () => {
   const handleSubmit = async (e: React.SyntheticEvent) => {
@@ -16,29 +19,28 @@ const AddProject = () => {
     const area = target.area.value
     const address = target.address.value
 
-		const data = {
-			name: name,
-			area: area,
-			address: address,
-		}
+    const data = {
+      name: name,
+      area: area,
+      address: address,
+    }
 
+    const JSONdata = JSON.stringify(data)
 
-    const JSONdata = JSON.stringify(data);
+    const endpoint = 'api/createProject'
 
-		const endpoint = 'api/createProject';
-
-		const options = {
+    const options = {
       method: 'POST',
-			headers: {
+      headers: {
         'Content-type': 'application/json',
-			},
-			body: JSONdata,
-		}
+      },
+      body: JSONdata,
+    }
 
-		const response = await fetch(endpoint, options)
+    const response = await fetch(endpoint, options)
 
-		const result = await response.json()
-    console.log(result);
+    const result = await response.json()
+    console.log(result)
 
     alert(result.data)
   }
@@ -46,10 +48,10 @@ const AddProject = () => {
   return (
     <div className={style.container}>
       <h1>Create New Project</h1>
-      <form  className={style.form} onSubmit={handleSubmit}>
+      <form className={style.form} onSubmit={handleSubmit}>
         <FormBlock title='Project Info'>
           <div className={style.input__container}>
-            <input
+            <Input
               type='text'
               placeholder='Name'
               name='name'
@@ -57,7 +59,7 @@ const AddProject = () => {
               className={style.input}
               required
             />
-            <input
+            <Input
               type='number'
               placeholder='Area'
               name='area'
@@ -65,7 +67,7 @@ const AddProject = () => {
               className={style.input}
             />
           </div>
-          <input
+          <Input
             type='text'
             placeholder='Address'
             id='address'
@@ -74,8 +76,13 @@ const AddProject = () => {
             required
           />
         </FormBlock>
-
-        <FormBlock title='Client Info'>
+        <LinkButton href={'#'}>Add Client</LinkButton>
+        <LinkButton href={'#'}>Team</LinkButton>
+        <div className={style.buttonBlock}>
+          <Button mode='ghost'>Cancel</Button>
+          <Button mode='action'>Cancel</Button>
+        </div>
+        {/* <FormBlock title='Client Info'>
           <div className={style.input__container}>
             <input
               type='text'
@@ -112,7 +119,7 @@ const AddProject = () => {
             <input type='button' value='Cancel' />
             <input type='submit' value='Create' />
           </div>
-        </FormBlock>
+        </FormBlock> */}
       </form>
     </div>
   )

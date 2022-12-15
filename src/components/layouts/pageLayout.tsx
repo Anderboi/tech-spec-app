@@ -1,5 +1,5 @@
 import React from 'react'
-import Divider from '../base/divider'
+import Divider from '../base/Divider'
 import PageSubheader from '../base/page_subheader/page_subheader'
 import style from './pageLayout.module.scss'
 

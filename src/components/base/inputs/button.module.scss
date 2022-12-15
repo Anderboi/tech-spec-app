@@ -1,0 +1,19 @@
+@use '../../../styles/abstracts' as *;
+
+.btn {
+  border: 1px solid transparent;
+  width: fit-content;
+  min-width: 22rem;
+  padding: 1rem 3rem;
+  font-weight: 500;
+}
+
+.ghost {
+  background-color: transparent;
+}
+
+.action {
+  background-color: getColor(accent);
+  border-radius: $border-radius;
+  color: getColor(bg);
+}
