@@ -31,6 +31,26 @@
 			display: flex;
 			justify-content: flex-end;
 			gap: 1rem;
+			padding-top: 2rem;
 		}
+	}
+}
+
+// Tablets
+@media screen and (max-width: 1024px) {
+
+}
+
+// Mobile
+@media screen and (max-width: 600px) {
+	.input__container{
+		flex-direction: column;
+		align-items: flex-end;
+
+	}
+	.buttonBlock{
+		flex-direction: column-reverse;
+		align-items: center;
+		width: 100% !important;
 	}
 }

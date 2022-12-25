@@ -76,11 +76,24 @@ const AddProject = () => {
             required
           />
         </FormBlock>
-        <LinkButton href={'#'}>Add Client</LinkButton>
-        <LinkButton href={'#'}>Team</LinkButton>
+        {/* <FormBlock title='Client'>
+        <div className={style.input__container}>
+          <Input placeholder='Invite by name or email' />{' '}
+          <Button mode='action'>Invite</Button>
+        </div>
+        </FormBlock>
+        <FormBlock title='Designers'>
+        <div className={style.input__container}>
+          <Input placeholder='Invite by name or email' />{' '}
+          <Button mode='action'>Invite</Button>
+        </div>
+        </FormBlock> */}
+        <LinkButton href={'#'}>+ Add Client</LinkButton>
+        <LinkButton href={'#'}>+ Add Designer</LinkButton>
+
         <div className={style.buttonBlock}>
           <Button mode='ghost'>Cancel</Button>
-          <Button mode='action'>Cancel</Button>
+          <Button mode='action'>Create</Button>
         </div>
         {/* <FormBlock title='Client Info'>
           <div className={style.input__container}>

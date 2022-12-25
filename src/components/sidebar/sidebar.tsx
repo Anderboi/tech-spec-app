@@ -4,7 +4,7 @@ import MenuLayout from './menuLayout/menuLayout'
 import {Logo_block} from './logo_block'
 import {MdOutlineNotificationsActive, MdOutlineHelpCenter} from 'react-icons/md'
 import SidebarLink from './sidebar_link/sidebar_link'
-import CustomDivider from '../base/Divider'
+import CustomDivider from '../base/customDivider'
 import UserBlock from './user_block/user_block'
 import {RiContactsLine, RiStackLine} from 'react-icons/ri'
 import {BsFillSquareFill} from 'react-icons/bs'
@@ -67,7 +67,7 @@ const Sidebar = (): JSX.Element => {
     <aside className={style.sidebar}>
       <Logo_block />
       <MenuLayout className={style.sidebar__nav}>{items}</MenuLayout>
-      <CustomDivider className={style.divider}/>
+      <CustomDivider className={style.divider} />
 
       <MenuLayout className={style.sidebar__projectsBlock}>
         <span className={style.sidebar__subheader}>Favourites</span>
@@ -82,7 +82,7 @@ const Sidebar = (): JSX.Element => {
       </MenuLayout>
       <MenuLayout className={style.sidebar__nav}>{helpers}</MenuLayout>
 
-      <CustomDivider className={style.divider}/>
+      <CustomDivider className={style.divider} />
       <UserBlock />
     </aside>
   )
