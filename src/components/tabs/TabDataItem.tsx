@@ -24,9 +24,9 @@ const TabContentItem: React.FunctionComponent<Props> = ({
     <div className={style.container}>
       <div className={style.container__head} onClick={handleOpen}>
         <span className={style.header}>{title}</span>
-        <IoIosArrowDown className={cn(style.icon, {[style.icon_active]: open})} />
+        <IoIosArrowDown className={cn(style.icon, {[`${style.icon_active}`]: open})} />
       </div>
-      <div className={cn(style.container__body, {[style.active]: open})}>
+      <div className={cn(style.container__body, {[`${style.active}`]: open})}>
           <article className={style.data}>
           {children}
           </article>
