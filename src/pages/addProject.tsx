@@ -64,6 +64,7 @@ const AddProject = () => {
               placeholder='Area'
               name='area'
               id='area'
+              min={1}
               className={style.input}
             />
           </div>

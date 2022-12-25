@@ -17,7 +17,7 @@ const Tab: React.FunctionComponent<Props> = ({
   selected,
 }) => {
   return (
-      <Link className={cn(style.tab, {[style.selected]: selected})} href={href}>
+      <Link className={cn(style.tab, selected && style.selected)} href={href}>
         {icon}
         {children}
       </Link>
