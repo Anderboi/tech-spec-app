@@ -9,6 +9,7 @@ import CustomDivider from '../../base/customDivider'
 import Link from 'next/link'
 
 const ProjectCard: React.FunctionComponent<Project> = ({
+  initDate,
   id,
   address,
   area,
@@ -43,6 +44,7 @@ const ProjectCard: React.FunctionComponent<Project> = ({
             <h5 className={style.area_heading}>Area:</h5>
             <h5 className={style.area_value}>{`${area} sq.m.`}</h5>
           </div>
+          <span>{`${initDate.getFullYear()}`}</span>
 
           <ProjectStage stage={stage || 'Concept'} />
         </div>

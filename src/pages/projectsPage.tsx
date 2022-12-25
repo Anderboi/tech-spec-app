@@ -17,6 +17,7 @@ function ProjectsPage() {
         </Head>
         <GridLayout>
           <ProjectCard
+          initDate={new Date()}
             name='first'
             id={1}
             address='Rublevskoe s. 3/43'
@@ -24,6 +25,7 @@ function ProjectsPage() {
             stage='Feasibility'
           />
           <ProjectCard
+          initDate={new Date()}
             name='first'
             id={2}
             address='Rublevskoe s. 3/43'
@@ -31,6 +33,7 @@ function ProjectsPage() {
             stage='Feasibility'
           />
           <ProjectCard
+          initDate={new Date()}
             name='first'
             id={3}
             address='Rublevskoe s. 3/43'
@@ -38,6 +41,7 @@ function ProjectsPage() {
             stage='Feasibility'
           />
           <ProjectCard
+          initDate={new Date()}
             name='first'
             id={4}
             address='Rublevskoe s. 3/43'

@@ -14,6 +14,7 @@ function ContactsPage(): JSX.Element {
         <GridLayout>
           <ProjectCard
             name='first'
+            initDate={new Date()}
             id={1}
             address='Rublevskoe s. 3/43'
             area={120}
