@@ -5,12 +5,15 @@ import ProjectCard from '../components/project/project_card/project_card'
 import Head from 'next/head'
 import {createClient} from '@supabase/supabase-js'
 import {Project} from '../types/types'
+import { useSupabaseClient } from '@supabase/auth-helpers-react'
+import { Database } from '../types/supabase'
 
 export async function getStaticProps() {
   const supabaseAdmin = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL || '',
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ''
   )
+
 
   const {data} = await supabaseAdmin.from('projects').select('*').order('id')
   return {
@@ -21,6 +24,8 @@ export async function getStaticProps() {
 }
 
 function ProjectsPage({projects}: {projects: Project[]}) {
+  const supabaseClient = useSupabaseClient<Database>()
+  // supabaseClient.from('projects').select('*').order('id')
   return (
     <>
       <PageLayout title='Projects'>
