@@ -1,12 +1,9 @@
-import {createClient} from '@supabase/supabase-js'
-import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
-import styles from '../styles/Home.module.scss'
-import Layout from './../components/layout'
-
-export default function Home(props: any) {
-
-
-  return <div>Home</div>
+function Page() {
+  return (
+    <ul>
+      
+    </ul>
+  );
 }
+
+export default Page;

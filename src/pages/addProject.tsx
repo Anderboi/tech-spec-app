@@ -40,7 +40,7 @@ const AddProject = () => {
     const response = await fetch(endpoint, options)
 
     const result = await response.json()
-    console.log(result)
+    // console.log(result)
 
     alert(result.data)
   }

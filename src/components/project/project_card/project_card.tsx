@@ -1,18 +1,18 @@
-import Image from 'next/image'
-import React from 'react'
-import style from './project_card.module.scss'
-import {TiStarOutline, TiStarFullOutline} from 'react-icons/ti'
-import {FiMoreVertical} from 'react-icons/fi'
-import {Project} from '../../../types/types'
-import ProjectStage from './project_stage'
-import CustomDivider from '../../base/customDivider'
-import Link from 'next/link'
+import Image from "next/image";
+import React from "react";
+import style from "./project_card.module.scss";
+import { TiStarOutline, TiStarFullOutline } from "react-icons/ti";
+import { FiMoreVertical } from "react-icons/fi";
+import { Project } from "../../../types/types";
+import ProjectStage from "./project_stage";
+import CustomDivider from "../../base/customDivider";
+import Link from "next/link";
 
 const ProjectCard: React.FunctionComponent<Project> = ({
   initDate,
   id,
   address,
-  area,
+  project_area,
   image,
   stage,
 }): JSX.Element => {
@@ -24,14 +24,11 @@ const ProjectCard: React.FunctionComponent<Project> = ({
           <FiMoreVertical />
         </div>
         {image || (
-          <img
-
-            // width={360}
-            // height={210}
+          <Image
             className={style.image}
-            // priority
-            src='/images/blank.jpg'
-            alt='project image'
+            src="/images/blank.jpg"
+            alt="project image"
+            fill
           />
         )}
       </div>
@@ -42,15 +39,14 @@ const ProjectCard: React.FunctionComponent<Project> = ({
         <div className={style.lower_block}>
           <div>
             <h5 className={style.area_heading}>Area:</h5>
-            <h5 className={style.area_value}>{`${area} sq.m.`}</h5>
+            <h5 className={style.area_value}>{`${project_area} sq.m.`}</h5>
           </div>
-          <span>{`${initDate.getFullYear()}`}</span>
 
-          <ProjectStage stage={stage || 'Concept'} />
+          <ProjectStage stage={stage || "Concept"} />
         </div>
       </div>
     </Link>
-  )
-}
+  );
+};
 
-export default ProjectCard
+export default ProjectCard;

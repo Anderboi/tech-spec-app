@@ -1,48 +1,54 @@
-import {useRouter} from 'next/router'
-import React from 'react'
-import style from './page.module.scss'
-import Image from 'next/image'
-import Link from 'next/link'
-import cn from 'classnames'
-import GridLayout from './../../components/layouts/grid_layout'
-import ProjectDataTabContainer from '../../components/tabs/TabContainer'
-import {Project} from '../../types/types'
+import React from "react";
+import style from "./page.module.scss";
+import Image from "next/image";
+import Link from "next/link";
+import cn from "classnames";
+import GridLayout from "./../../components/layouts/grid_layout";
+import ProjectDataTabContainer from "../../components/tabs/TabContainer";
+import { Project } from "../../types/types";
+import { supabase } from '../../lib/supabaseClient';
 
-const Project: React.FunctionComponent<Project> = ({
-  address,
-  area,
-  id,
-  name = 'Project Name',
-  stage,
-  image,
-  initDate = new Date().toLocaleString(),
-}): JSX.Element => {
-  const route = useRouter()
+
+export async function getServerSideProps(context:any) {
+  const { id } = context.query;
+  console.log(id)
+  const { data } = await supabase
+  .from("projects")
+  .select("*")
+  .eq("id", id)
+  return {
+    props: {
+      project: data[0],
+    },
+  };
+}
+
+const Project = ({ project }: {project: Project}) => {
 
   return (
     <main className={style.main}>
       <section className={cn(style.header, style.section)}>
         <Image
-          src={image ? image : '/images/blank.jpg'}
-          alt='Project image'
+          src={project.image ? project.image : "/images/blank.jpg"}
+          alt="Project image"
           width={960}
           height={280}
           className={style.header__image}
-					priority
+          priority
         />
         <div className={style.textblock}>
-          <h3 className={style.textblock__header}>{name}</h3>
-          <span className={style.date}>{`initDate`}</span>
+          <h3 className={style.textblock__header}>{project.name}</h3>
+          {/* <span className={style.date}>{`initDate`}</span> */}
           <span>
-            Address:{' '}
-            <Link href={'#'} className={style.link}>
-              {address}
+            Address:
+            <Link href={"#"} className={style.link}>
+              {project.address}
             </Link>
           </span>
           <span>
-            Area: <span>{area}</span>
+            Area: <span>{project.project_area}</span>
           </span>
-          <span>Client:</span>
+          <span>Client: {project.Client}</span>
           <span>Team: </span>
         </div>
       </section>
@@ -58,7 +64,7 @@ const Project: React.FunctionComponent<Project> = ({
       <section className={style.section}>
         <div className={style.subheader}>
           <h3>Gallery</h3>
-          <Link href={'#'} className={style.link}>
+          <Link href={"#"} className={style.link}>
             See all
           </Link>
         </div>
@@ -73,7 +79,7 @@ const Project: React.FunctionComponent<Project> = ({
         </GridLayout>
       </section>
     </main>
-  )
-}
+  );
+};
 
-export default Project
+export default Project;

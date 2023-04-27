@@ -14,10 +14,11 @@ export type Stage =
 
 export interface Project {
   name: string;
-  id:number;
+  id: number;
   initDate: Date;
   address: string;
-  area: number;
+  project_area: number;
   image?: any;
   stage?: Stage;
+  Client: string;
 }
