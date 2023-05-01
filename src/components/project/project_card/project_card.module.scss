@@ -13,14 +13,16 @@
   }
 
   .info_block {
-    padding: 2.4rem 3rem;
+    padding: 2.4rem 2rem;
+    display: flex;
+    flex-direction: column;
 
     .divider {
-      margin: 0.8rem 0 2rem;
+      margin: 1.4rem 0 3rem;
     }
 
     .info_block__title {
-      text-align: center;
+      text-align: start;
       color: getColor(text);
       overflow: hidden;
       text-overflow: ellipsis;
@@ -33,10 +35,13 @@
       align-items: flex-end;
 
       .area_heading {
-        color: getColor(text);
+        color: getColor(text-secondary);
+        font-size: 1.4rem;
       }
       .area_value {
         color: getColor(text-secondary);
+        font-size: 1.4rem;
+
       }
     }
   }

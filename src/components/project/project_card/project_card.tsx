@@ -33,17 +33,15 @@ const ProjectCard: React.FunctionComponent<Project> = ({
         )}
       </div>
       <div className={style.info_block}>
-        <h4 className={style.info_block__title}>{address}</h4>
+        <h3 className={style.info_block__title}>{address}</h3>
         <CustomDivider className={style.divider} />
-
         <div className={style.lower_block}>
           <div>
-            <h5 className={style.area_heading}>Area:</h5>
-            <h5 className={style.area_value}>{`${project_area} sq.m.`}</h5>
+            <span className={style.area_heading}>Area: </span>
+            <span className={style.area_value}>{`${project_area} sq.m.`}</span>
           </div>
-
-          <ProjectStage stage={stage || "Concept"} />
         </div>
+        <ProjectStage stage={stage || "Concept"} />
       </div>
     </Link>
   );

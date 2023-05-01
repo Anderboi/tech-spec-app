@@ -1,91 +1,48 @@
-import {useRouter, withRouter} from 'next/router'
-import React from 'react'
-import Tab from './Tab'
-import TabBody from './TabBody'
-import TabHead from './TabHead'
-import style from './tabs.module.scss'
-import {BsClipboardData} from 'react-icons/bs'
-import {IoIosMore} from 'react-icons/io'
-import TabContent from '../project/tabs/DataTab'
-import TabContentItem from './TabDataItem'
+import { useRouter, withRouter } from "next/router";
+import React from "react";
+import Tab from "./Tab";
+import TabBody from "./TabBody";
+import TabHead from "./TabHead";
+import style from "./tabs.module.scss";
+import { BsClipboardData } from "react-icons/bs";
+import { IoIosMore } from "react-icons/io";
+import TabContent from "../project/tabs/DataTab";
+import TabContentItem from "./TabDataItem";
+import TabsHeader from "./tabs_header/tabs_header";
+import ProfileData from "./data_tabs/ProfileData";
+import ProjectInformation from "./data_tabs/ProjectInformaition";
+import PlanningRequirements from "./data_tabs/PlanningRequirements";
+import DemolitionData from './data_tabs/DemolitionData';
 
-const ProjectDataTabContainer = ({router}: any) => {
-  const rout = useRouter()
+const ProjectDataTabContainer = ({ router }: any) => {
   const {
-    query: {tab},
-  } = router
+    query: { tab },
+  } = router;
 
-  const isTabOne = tab === '1' || tab == null
-  const isTabTwo = tab === '2'
-  const isTabThree = tab === '3'
-  const isTabFour = tab === '4'
+  //! Tabs for different subgroups, if needed
+  // const isTabOne = tab === '1' || tab == null
+  // const isTabTwo = tab === '2'
+  // const isTabThree = tab === '3'
+  // const isTabFour = tab === '4'
+
   return (
     <>
-      <TabHead className={style.header}>
-        <Tab
-          icon={<BsClipboardData />}
-          selected={isTabOne}
-          href={{pathname: rout.asPath, query: {tab: '1'}}}
-        >
-          Project Data
-        </Tab>
-        <Tab
-          icon={<BsClipboardData />}
-          selected={isTabTwo}
-          href={{pathname: rout.asPath, query: {tab: '2'}}}
-        >
-          Project Data
-        </Tab>
-        <Tab
-          icon={<BsClipboardData />}
-          selected={isTabThree}
-          href={{pathname: rout.asPath, query: {tab: '3'}}}
-        >
-          Project Data
-        </Tab>
-        <Tab
-          icon={<BsClipboardData />}
-          selected={isTabFour}
-          href={{pathname: rout.asPath, query: {tab: '4'}}}
-        >
-          Project Data
-        </Tab>
-        <IoIosMore />
-      </TabHead>
-      <TabBody>
-        {isTabOne && (
-          <TabContent>
-            <TabContentItem title='Residents Profiles'>Residents:</TabContentItem>
-            <TabContentItem title='Planning Requirements'>one</TabContentItem>
-            <TabContentItem title='Demolition'>
-              <div>
-                <h4>Engineering Systems:</h4>
-                <span>Heating:</span>
-                <span>Plumbing:</span>
-                <span>Electrical system:</span>
-                <span>Conditioning and ventilation:</span>
-                <span>Furniture:</span>
-              </div>
-              <div>
-                <h4>Structural:</h4>
-                <span>Walls:</span>
-                <span>Plaster:</span>
-                <span>Floor Screed:</span>
-                <span>Entrance doors:</span>
-                <span>Doors:</span>
-                <span>Windows:</span>
-              </div>
-              </TabContentItem>
-            <TabContentItem title='Utilities'>one</TabContentItem>
-            <TabContentItem title='Equipment'>one</TabContentItem>
-          </TabContent>
-        )}
-        {isTabTwo && <TabContent>Second</TabContent>}
+      {/* <TabsHeader/> */}
+      {/* <TabBody> */}
+      {/* {isTabOne && ( */}
+      <TabContent>
+        <ProfileData />
+        <ProjectInformation />
+        <PlanningRequirements />
+        <DemolitionData/>
+      </TabContent>
+      {/* )} */}
+      {/* {isTabTwo && <TabContent>Second</TabContent>}
         {isTabThree && <TabContent>Third</TabContent>}
-        {isTabFour && <TabContent>Fourth</TabContent>}
-      </TabBody>
+        {isTabFour && <TabContent>Fourth</TabContent>} */}
+      {/* </TabBody> */}
     </>
-  )
-}
+  );
+};
 
-export default withRouter(ProjectDataTabContainer)
+export default withRouter(ProjectDataTabContainer);

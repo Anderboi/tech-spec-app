@@ -1,0 +1,29 @@
+@use "../../../styles/abstracts/" as *;
+
+.header {
+  background-color: getColor(bg);
+  overflow: hidden;
+  border-radius: $border-radius;
+
+  &__image {
+    object-fit: cover;
+  }
+
+  .textblock {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 2rem 3rem;
+    color: getColor(text-secondary);
+    font-size: 1.6rem;
+    // font-weight: 500;
+
+    &__header {
+      color: getColor(text);
+      margin-bottom: 0.4rem;
+    }
+  }
+}
+.section {
+  margin: 2rem 0;
+}

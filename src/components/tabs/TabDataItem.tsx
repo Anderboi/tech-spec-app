@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import style from './tab_data_item.module.scss'
 import {IoIosArrowDown} from 'react-icons/io'
 import cn from 'classnames'
+import { MdOutlineAddBox } from 'react-icons/md'
 
 interface Props {
   title: string
@@ -24,13 +25,16 @@ const TabContentItem: React.FunctionComponent<Props> = ({
     <div className={style.container}>
       <div className={style.container__head} onClick={handleOpen}>
         <span className={style.header}>{title}</span>
-        <IoIosArrowDown className={cn(style.icon, {[`${style.icon_active}`]: open})} />
-      </div>
-      <div className={cn(style.container__body, {[`${style.active}`]: open})}>
-          <article className={style.data}>
-          {children}
-          </article>
+        <div>
+          <MdOutlineAddBox />
+          <IoIosArrowDown
+            className={cn(style.icon, { [`${style.icon_active}`]: open })}
+          />
         </div>
+      </div>
+      <div className={cn(style.container__body, { [`${style.active}`]: open })}>
+        <article className={style.data}>{children}</article>
+      </div>
       {/* {open && (
         <div className={style.container__body}>
           <article>
@@ -42,7 +46,7 @@ const TabContentItem: React.FunctionComponent<Props> = ({
         </div>
       )} */}
     </div>
-  )
+  );
 }
 
 export default TabContentItem

@@ -1,21 +1,14 @@
 import React from "react";
-import style from "./page.module.scss";
-import Image from "next/image";
-import Link from "next/link";
-import cn from "classnames";
-import GridLayout from "./../../components/layouts/grid_layout";
 import ProjectDataTabContainer from "../../components/tabs/TabContainer";
 import { Project } from "../../types/types";
-import { supabase } from '../../lib/supabaseClient';
+import { supabase } from "../../lib/supabaseClient";
+import ProjectHeader from "../../components/project/project_header/project_header";
+import ProjectGallary from '../../components/project/project_gallary/project_gallary';
 
-
-export async function getServerSideProps(context:any) {
+export async function getServerSideProps(context: any) {
   const { id } = context.query;
-  console.log(id)
-  const { data } = await supabase
-  .from("projects")
-  .select("*")
-  .eq("id", id)
+  console.log(id);
+  const { data } = await supabase.from("projects").select("*").eq("id", id);
   return {
     props: {
       project: data[0],
@@ -23,61 +16,29 @@ export async function getServerSideProps(context:any) {
   };
 }
 
-const Project = ({ project }: {project: Project}) => {
-
+const Project = ({ project }: { project: Project }) => {
   return (
-    <main className={style.main}>
-      <section className={cn(style.header, style.section)}>
-        <Image
-          src={project.image ? project.image : "/images/blank.jpg"}
-          alt="Project image"
-          width={960}
-          height={280}
-          className={style.header__image}
-          priority
-        />
-        <div className={style.textblock}>
-          <h3 className={style.textblock__header}>{project.name}</h3>
-          {/* <span className={style.date}>{`initDate`}</span> */}
-          <span>
-            Address:
-            <Link href={"#"} className={style.link}>
-              {project.address}
-            </Link>
-          </span>
-          <span>
-            Area: <span>{project.project_area}</span>
-          </span>
-          <span>Client: {project.Client}</span>
-          <span>Team: </span>
-        </div>
-      </section>
-      <section className={style.section}>
-        {/* <div className={style.subheader}>
+    <main >
+      <ProjectHeader
+        Client={project.Client}
+        address={project.address}
+        name={project.name}
+        project_area={project.project_area}
+        image={project.image}
+        id={project.id}
+        initDate={project.initDate}
+        stage={project.stage}
+      />
+      {/* <section className={style.section}>
+        <div className={style.subheader}>
           <h3>Categories</h3>
           <Link href={'#'} className={style.link}>
             See all
           </Link>
-        </div> */}
-        <ProjectDataTabContainer />
-      </section>
-      <section className={style.section}>
-        <div className={style.subheader}>
-          <h3>Gallery</h3>
-          <Link href={"#"} className={style.link}>
-            See all
-          </Link>
         </div>
-        <GridLayout>
-          {/* <Image src={'/images/blank.jpg'} alt='image' width={320} height={200}></Image>
-					<Image src={'/images/blank.jpg'} alt='image' width={320} height={200}></Image>
-					<Image src={'/images/blank.jpg'} alt='image' width={320} height={200}></Image>
-					<Image src={'/images/blank.jpg'} alt='image' width={320} height={200}></Image>
-					<Image src={'/images/blank.jpg'} alt='image' width={320} height={200}></Image>
-					<Image src={'/images/blank.jpg'} alt='image' width={320} height={200}></Image>
-					<Image src={'/images/blank.jpg'} alt='image' width={320} height={200}></Image> */}
-        </GridLayout>
-      </section>
+      </section> */}
+      <ProjectDataTabContainer />
+      <ProjectGallary/>
     </main>
   );
 };

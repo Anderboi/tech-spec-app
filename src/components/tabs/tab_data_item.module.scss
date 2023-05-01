@@ -22,9 +22,10 @@
     .icon {
       font-size: 1.8rem;
 			transition: all .1s ease;
+      transform: rotate(90deg);
 
 			&_active{
-				transform: rotate(180deg);
+				transform: rotate(0deg);
 			}
     }
   }
