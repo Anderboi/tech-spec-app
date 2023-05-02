@@ -12,14 +12,7 @@ function ContactsPage(): JSX.Element {
           <title>Contacts Page</title>
         </Head>
         <GridLayout>
-          <ProjectCard
-            name='first'
-            initDate={new Date()}
-            id={1}
-            address='Rublevskoe s. 3/43'
-            area={120}
-            stage='Feasibility'
-          />
+          
         </GridLayout>
       </PageLayout>
     </>
