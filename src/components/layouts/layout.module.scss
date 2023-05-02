@@ -1,29 +1,27 @@
-@use '../../styles/abstracts/' as *;
+@use "../../styles/abstracts/" as *;
 
 .layoutContainer {
-  // display: grid;
-  // grid-template-columns: 1fr;
+  display: grid;
+  grid-template-columns: 30rem 1fr;
 
   .mainBlock {
-    width: 100%;
+    // width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem 0 2rem + $sidebar-width;
+    padding: 0 2rem;
   }
 }
 
 // Tablets
 @media screen and (max-width: 1024px) {
-  .mainBlock {
-    // grid-template-columns:  1fr;
-    padding: 0 2rem 0 2rem + $sm-sidebar-width !important;
+  .layoutContainer {
+    grid-template-columns: 8rem 1fr;
   }
 }
 
 // Mobile
 @media screen and (max-width: 600px) {
-  .mainBlock {
-    padding: 0 2rem !important;
-    // grid-template-columns: 1fr;
+  .layoutContainer {
+    grid-template-columns: 1fr;
   }
 }

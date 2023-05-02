@@ -7,7 +7,7 @@
   border: 1px solid getColor(bg-variant);
 
   .container__head {
-    padding: 2rem 3rem;
+    padding: 1.6rem 3rem;
 
     cursor: pointer;
 
@@ -17,7 +17,7 @@
     align-items: center;
 
     .header {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       font-weight: 500;
     }
     .icon {
@@ -33,11 +33,15 @@
 
   .container__body {
     max-height: 0px;
-    transition: all .6s ease;
+    transition: all .1s ease;
     overflow-y: scroll;
 		opacity: 0;
 		.data{
 			padding: 0 3rem 2rem;
+      font-size: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
 		}
   }
   .active {
