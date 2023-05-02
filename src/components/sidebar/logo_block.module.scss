@@ -2,13 +2,13 @@
 
 .logo_block {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   align-items: flex-end;
 
   fill: getColor(accent);
 
   .logo__text {
-    font-size: 4rem;
+    font-size: 2.4rem;
     font-weight: 700;
     font-family: $logo-font;
     margin: 0;

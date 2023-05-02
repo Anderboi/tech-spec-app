@@ -7,7 +7,6 @@ import style from "./sidebar_link.module.scss";
 
 const SidebarLink = ({ href, icon, name }: menuItem):JSX.Element => {
   const router = useRouter();
-
   return (
     <Link
       href={href}

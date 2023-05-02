@@ -2,23 +2,23 @@
 
 .item {
   font-weight: 500;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   line-height: 1em;
 
   padding: 0.6rem 2rem;
   border-radius: 0.6rem;
   display: flex;
-  gap: 2rem;
-  align-items: center;
+  gap: 1rem;
+  align-items: stretch;
 
-  color: getColor(text-secondary);
+  color: getColor(text);
 
   &:hover {
     background-color: getColor(bg-variant);
   }
 
   .icon {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 }
 
