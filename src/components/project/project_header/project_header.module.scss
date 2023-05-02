@@ -4,6 +4,7 @@
   background-color: getColor(bg);
   overflow: hidden;
   border-radius: $border-radius;
+  border: 1px solid getColor(bg-variant);
 
   &__image {
     object-fit: cover;

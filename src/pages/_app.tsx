@@ -1,6 +1,6 @@
 import "../styles/globals.scss";
 import type { AppProps } from "next/app";
-import Layout from "../components/layout";
+import Layout from "../components/layouts/layout";
 import { ThemeProvider } from "next-themes";
 
 import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";

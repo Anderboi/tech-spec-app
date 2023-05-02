@@ -4,6 +4,7 @@
   background-color: getColor(bg);
   margin: 2rem 0;
   border-radius: $border-radius;
+  border: 1px solid getColor(bg-variant);
 
   .container__head {
     padding: 2rem 3rem;
