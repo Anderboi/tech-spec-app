@@ -7,11 +7,10 @@ import ProjectGallary from '../../components/project/project_gallary/project_gal
 
 export async function getServerSideProps(context: any) {
   const { id } = context.query;
-  console.log(id);
   const { data } = await supabase.from("projects").select("*").eq("id", id);
   return {
     props: {
-      project: data[0],
+      project: data && data[0],
     },
   };
 }
