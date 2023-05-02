@@ -5,8 +5,9 @@
   flex-direction: column;
   gap: 2rem;
 
-  // position: fixed;
-  // top: 0;
+  position: sticky;
+  // height: 100vh;
+  top: 0;
   // left: 0;
 
   width: var(--sidebar-width);
