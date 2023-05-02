@@ -7,7 +7,9 @@
   border: 1px solid getColor(bg-variant);
 
   &__image {
-    object-fit: cover;
+    // max-height: 28rem;
+    // max-width: 96rem;
+    // object-fit: cover;
   }
 
   .textblock {
@@ -26,5 +28,6 @@
   }
 }
 .section {
+  
   margin: 2rem 0;
 }

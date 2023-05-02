@@ -11,8 +11,10 @@ function ProjectHeader(project: Project): JSX.Element {
       <Image
         src={project.image ? project.image : "/images/blank.jpg"}
         alt="Project image"
-        width={960}
-        height={280}
+        width='0'
+        height='0'
+        sizes="100vw"
+        style={{ width: "100%", height: "auto" }}
         className={style.header__image}
         priority
       />

@@ -4,6 +4,7 @@ import { Project } from "../../types/types";
 import { supabase } from "../../lib/supabaseClient";
 import ProjectHeader from "../../components/project/project_header/project_header";
 import ProjectGallary from '../../components/project/project_gallary/project_gallary';
+import MainContentBlock from '../../components/base/main_content_block/MainContentBlock';
 
 export async function getServerSideProps(context: any) {
   const { id } = context.query;
@@ -17,7 +18,7 @@ export async function getServerSideProps(context: any) {
 
 const Project = ({ project }: { project: Project }) => {
   return (
-    <main >
+    <>
       <ProjectHeader
         Client={project.Client}
         address={project.address}
@@ -37,8 +38,8 @@ const Project = ({ project }: { project: Project }) => {
         </div>
       </section> */}
       <ProjectDataTabContainer />
-      <ProjectGallary/>
-    </main>
+      <ProjectGallary />
+    </>
   );
 };
 
