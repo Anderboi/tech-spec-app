@@ -1,13 +1,13 @@
 import React from "react";
-import TabContentItem from "../TabDataItem";
+import ProjectDataBlock from "../project_data_block/ProjectDataBlock";
 
 const ProfileData = () => {
   return (
-    <TabContentItem title="Client Information">
+    <ProjectDataBlock title="Client Information">
       <div>Ф.И.О.:</div>
       <div>Контактный телефон:</div>
       <div>Электронная почта:</div>
-    </TabContentItem>
+    </ProjectDataBlock>
   );
 };
 

@@ -1,15 +1,15 @@
-import React from 'react'
-import TabContentItem from '../TabDataItem';
+import React from "react";
+import ProjectDataBlock from "../project_data_block/ProjectDataBlock";
 
 const ProjectInformation = () => {
   return (
-    <TabContentItem title="Общая информация по объекту">
+    <ProjectDataBlock title="Общая информация по объекту">
       <div>Адрес:</div>
       <div>Площадь объекта:</div>
       <div>Этажность:</div>
       <div>Количество единовременно проживающих:</div>
-    </TabContentItem>
+    </ProjectDataBlock>
   );
-}
+};
 
-export default ProjectInformation
+export default ProjectInformation;

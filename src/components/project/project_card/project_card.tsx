@@ -5,7 +5,7 @@ import { TiStarOutline, TiStarFullOutline } from "react-icons/ti";
 import { FiMoreVertical } from "react-icons/fi";
 import { Project } from "../../../types/types";
 import ProjectStage from "./project_stage";
-import CustomDivider from "../../base/customDivider";
+import CustomDivider from "../../base/divider/customDivider";
 import Link from "next/link";
 
 const ProjectCard: React.FunctionComponent<Project> = ({

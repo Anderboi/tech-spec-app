@@ -1,22 +1,21 @@
-import React from 'react'
-import CustomDivider from '../base/customDivider'
-import PageSubheader from '../base/page_subheader/page_subheader'
-import style from './pageLayout.module.scss'
+import React from "react";
+import CustomDivider from "../base/divider/customDivider";
+import PageSubheader from "../base/page_subheader/page_subheader";
+import style from "./pageLayout.module.scss";
 
 interface Props {
-  title: string
-  children: React.ReactNode
+  title: string;
+  children: React.ReactNode;
 }
 
-const PageLayout: React.FunctionComponent<Props> = ({title, children}) => {
+const PageLayout: React.FunctionComponent<Props> = ({ title, children }) => {
   return (
     <>
       <PageSubheader title={title} />
       <CustomDivider className={style.divider} />
-			{children}
-
+      {children}
     </>
-  )
-}
+  );
+};
 
-export default PageLayout
+export default PageLayout;

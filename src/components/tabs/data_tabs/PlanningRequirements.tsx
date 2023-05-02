@@ -1,8 +1,10 @@
-import React from 'react'
-import TabContentItem from '../TabDataItem';
+import React from "react";
+import ProjectDataBlock from "../project_data_block/ProjectDataBlock";
 
 const PlanningRequirements = () => {
-  return <TabContentItem title="Планировочные пожелания">one</TabContentItem>;
-}
+  return (
+    <ProjectDataBlock title="Планировочные пожелания">one</ProjectDataBlock>
+  );
+};
 
-export default PlanningRequirements
+export default PlanningRequirements;

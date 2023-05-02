@@ -1,66 +1,69 @@
-import React from 'react'
-import style from './sidebar.module.scss'
-import MenuLayout from './menuLayout/menuLayout'
-import {Logo_block} from './logo_block'
-import {MdOutlineNotificationsActive, MdOutlineHelpCenter} from 'react-icons/md'
-import SidebarLink from './sidebar_link/sidebar_link'
-import CustomDivider from '../base/customDivider'
-import UserBlock from './user_block/user_block'
-import {RiContactsLine, RiStackLine} from 'react-icons/ri'
-import {BsFillSquareFill} from 'react-icons/bs'
-import {MdOutlineAddBox} from 'react-icons/md'
-import {menuItem} from '../../types/nav_item'
+import React from "react";
+import style from "./sidebar.module.scss";
+import MenuLayout from "./menuLayout/menuLayout";
+import { Logo_block } from "./logo_block";
+import {
+  MdOutlineNotificationsActive,
+  MdOutlineHelpCenter,
+} from "react-icons/md";
+import SidebarLink from "./sidebar_link/sidebar_link";
+import CustomDivider from "../base/divider/customDivider";
+import UserBlock from "./user_block/user_block";
+import { RiContactsLine, RiStackLine } from "react-icons/ri";
+import { BsFillSquareFill } from "react-icons/bs";
+import { MdOutlineAddBox } from "react-icons/md";
+import { menuItem } from "../../types/nav_item";
 
 const menuItems: menuItem[] = [
   {
     id: 1,
-    name: 'Projects',
+    name: "Projects",
     icon: <RiStackLine />,
-    href: '/projectsPage',
+    href: "/projectsPage",
   },
   {
     id: 2,
-    name: 'Contacts',
+    name: "Contacts",
     icon: <RiContactsLine />,
-    href: '/contactsPage',
+    href: "/contactsPage",
   },
-]
+];
 
-const items = menuItems.map(({href, icon, id, name}: menuItem) => {
-  return <SidebarLink key={id} href={href} icon={icon} name={name} />
-})
+const items = menuItems.map(({ href, icon, id, name }: menuItem) => {
+  return <SidebarLink key={id} href={href} icon={icon} name={name} />;
+});
 
 const projects: menuItem[] = [
   {
     id: 1,
-    name: 'Test Project 01',
+    name: "Test Project 01",
     icon: <BsFillSquareFill />,
-    href: '/project01',
+    href: "/project01",
   },
-]
+];
 
-const projectsList = projects.map(({id, name, href, icon}: menuItem) => {
-  return <SidebarLink href={href} icon={icon} name={name} key={id} />
-})
+const projectsList = projects.map(({ id, name, href, icon }: menuItem) => {
+  return <SidebarLink href={href} icon={icon} name={name} key={id} />;
+});
 
 const helperItems: menuItem[] = [
   {
     id: 1,
-    name: 'Notifications',
+    name: "Notifications",
     icon: <MdOutlineNotificationsActive />,
-    href: '/notifications',
+    href: "/notifications",
   },
   {
     id: 2,
-    name: 'Help',
+    name: "Help",
     icon: <MdOutlineHelpCenter />,
-    href: '/help',
+    href: "/help",
   },
-]
+];
 
-const helpers = helperItems.map(({href, icon, id, name}: menuItem) => {
-  return <SidebarLink key={id} href={href} icon={icon} name={name} />
-})
+const helpers = helperItems.map(({ href, icon, id, name }: menuItem) => {
+  return <SidebarLink key={id} href={href} icon={icon} name={name} />;
+});
 
 const Sidebar = (): JSX.Element => {
   return (
@@ -74,9 +77,9 @@ const Sidebar = (): JSX.Element => {
         {projectsList}
         <span className={style.addLink}>
           <SidebarLink
-            href='/addProject'
+            href="/addProject"
             icon={<MdOutlineAddBox />}
-            name='Add New Project'
+            name="Add New Project"
           />
         </span>
       </MenuLayout>
@@ -85,7 +88,7 @@ const Sidebar = (): JSX.Element => {
       <CustomDivider className={style.divider} />
       <UserBlock />
     </aside>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;

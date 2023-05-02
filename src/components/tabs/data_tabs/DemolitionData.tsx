@@ -1,10 +1,10 @@
 import React from "react";
-import TabContentItem from "../TabDataItem";
+import ProjectDataBlock from "../project_data_block/ProjectDataBlock";
 
 const DemolitionData = () => {
   return (
     <>
-      <TabContentItem title="Информация по демонтажу">
+      <ProjectDataBlock title="Информация по демонтажу">
         <div>
           <h4>Инженерные системы:</h4>
           <span>Heating:</span>
@@ -22,9 +22,9 @@ const DemolitionData = () => {
           <span>Doors:</span>
           <span>Windows:</span>
         </div>
-      </TabContentItem>
-      <TabContentItem title="Utilities">one</TabContentItem>
-      <TabContentItem title="Equipment">one</TabContentItem>
+      </ProjectDataBlock>
+      <ProjectDataBlock title="Utilities">one</ProjectDataBlock>
+      <ProjectDataBlock title="Equipment">one</ProjectDataBlock>
     </>
   );
 };
