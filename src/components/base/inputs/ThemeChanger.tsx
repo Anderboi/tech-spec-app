@@ -15,6 +15,7 @@ const ThemeChanger = () => {
 
   return (
     <div>
+      {/* //TODO: make toggle button with icon  */}
       <button onClick={() => setTheme("light")}>light</button>
       <button onClick={() => setTheme("dark")}>dark</button>
     </div>

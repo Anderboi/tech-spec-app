@@ -1,14 +1,16 @@
-@use '../../../styles/abstracts' as *;
+@use "../../../styles/abstracts" as *;
 
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   margin: 3rem 0 2rem;
 
+  .title {
+    font-size: 3rem;
+  }
 
-  .iconsBlock{
+  .iconsBlock {
     display: flex;
     gap: 1rem;
     font-size: 2.4rem;
@@ -20,6 +22,7 @@
 
       &:hover {
         color: getColor(accent);
+        scale: 110%;
       }
     }
   }

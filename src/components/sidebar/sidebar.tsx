@@ -66,7 +66,7 @@ const helpers = helperItems.map(({ href, icon, id, name }: menuItem) => {
   return <SidebarLink key={id} href={href} icon={icon} name={name} />;
 });
 
-const Sidebar = ({switchTheme}: {switchTheme:any}): JSX.Element => {
+const Sidebar = (): JSX.Element => {
   return (
     <aside className={style.sidebar}>
       <Logo_block />
