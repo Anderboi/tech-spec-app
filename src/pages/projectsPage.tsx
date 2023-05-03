@@ -1,7 +1,7 @@
 import React from "react";
-import GridLayout from "../components/layouts/grid_layout";
-import PageLayout from "../components/layouts/pageLayout";
-import ProjectCard from "../components/project/project_card/project_card";
+import GridLayout from "../components/layouts/GridLayout";
+import PageLayout from "../components/layouts/PageLayout";
+import ProjectCard from "../components/project/project_card/ProjectCard";
 import Head from "next/head";
 import { Project } from "../types/types";
 import { supabase } from "../lib/supabaseClient";

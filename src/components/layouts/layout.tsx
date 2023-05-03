@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import style from "./layout.module.scss";
-import Sidebar from "../sidebar/sidebar";
+import Sidebar from "../sidebar/Sidebar";
 import MainContentBlock from "../base/main_content_block/MainContentBlock";
 
 interface Props {

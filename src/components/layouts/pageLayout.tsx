@@ -1,6 +1,6 @@
 import React from "react";
-import CustomDivider from "../base/divider/customDivider";
-import PageSubheader from "../base/page_subheader/page_subheader";
+import CustomDivider from "../base/divider/CustomDivider";
+import PageSubheader from "../base/page_subheader/PageSubheader";
 import style from "./pageLayout.module.scss";
 
 interface Props {

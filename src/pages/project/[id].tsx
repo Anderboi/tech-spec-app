@@ -2,8 +2,8 @@ import React from "react";
 import ProjectDataTabContainer from "../../components/tabs/TabContainer";
 import { Project } from "../../types/types";
 import { supabase } from "../../lib/supabaseClient";
-import ProjectHeader from "../../components/project/project_header/project_header";
-import ProjectGallary from '../../components/project/project_gallary/project_gallary';
+import ProjectHeader from "../../components/project/project_header/ProjectHeader";
+import ProjectGallary from '../../components/project/project_gallary/ProjectGallary';
 import MainContentBlock from '../../components/base/main_content_block/MainContentBlock';
 
 export async function getServerSideProps(context: any) {

@@ -2,7 +2,7 @@ import React from 'react'
 import FormBlock from '../components/base/form/formBlock/FormBlock'
 import LinkButton from '../components/base/link_button/LinkButton'
 import style from './addProject.module.scss'
-import Button from './../components/base/inputs/Button'
+import Button from '../components/base/inputs/Button'
 import Input from '../components/base/inputs/Input'
 
 const AddProject = () => {

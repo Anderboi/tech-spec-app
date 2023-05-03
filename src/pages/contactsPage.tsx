@@ -1,22 +1,20 @@
-import Head from 'next/head'
-import React from 'react'
-import GridLayout from '../components/layouts/grid_layout'
-import PageLayout from '../components/layouts/pageLayout'
-import ProjectCard from '../components/project/project_card/project_card'
+import Head from "next/head";
+import React from "react";
+import GridLayout from "../components/layouts/GridLayout";
+import PageLayout from "../components/layouts/PageLayout";
+import ProjectCard from "../components/project/project_card/ProjectCard";
 
 function ContactsPage(): JSX.Element {
   return (
     <>
-      <PageLayout title='Contacts'>
+      <PageLayout title="Contacts">
         <Head>
           <title>Contacts Page</title>
         </Head>
-        <GridLayout>
-          
-        </GridLayout>
+        <GridLayout>Hello</GridLayout>
       </PageLayout>
     </>
-  )
+  );
 }
 
-export default ContactsPage
+export default ContactsPage;

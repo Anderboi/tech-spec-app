@@ -1,32 +1,32 @@
 import React from "react";
 import style from "./sidebar.module.scss";
 import MenuLayout from "./menuLayout/menuLayout";
-import { Logo_block } from "./logo_block";
+import { Logo_block } from "./LogoBlock";
 import {
   MdOutlineNotificationsActive,
   MdOutlineHelpCenter,
 } from "react-icons/md";
-import SidebarLink from "./sidebar_link/sidebar_link";
-import CustomDivider from "../base/divider/customDivider";
+import SidebarLink from "./sidebar_link/SidebarLink";
+import CustomDivider from "../base/divider/CustomDivider";
 import UserBlock from "./user_block/user_block";
 import { RiContactsLine, RiStackLine } from "react-icons/ri";
 import { BsFillSquareFill } from "react-icons/bs";
 import { MdOutlineAddBox } from "react-icons/md";
 import { menuItem } from "../../types/nav_item";
-import ThemeChanger from '../base/inputs/ThemeChanger';
+import ThemeChanger from "../base/inputs/ThemeChanger";
 
 const menuItems: menuItem[] = [
   {
     id: 1,
     name: "Projects",
     icon: <RiStackLine />,
-    href: "/projectsPage",
+    href: "/ProjectsPage",
   },
   {
     id: 2,
     name: "Contacts",
     icon: <RiContactsLine />,
-    href: "/contactsPage",
+    href: "/ContactsPage",
   },
 ];
 
@@ -85,7 +85,7 @@ const Sidebar = (): JSX.Element => {
         </span>
       </MenuLayout>
       <MenuLayout className={style.sidebar__nav}>{helpers}</MenuLayout>
-      <ThemeChanger/>
+      <ThemeChanger />
       <CustomDivider className={style.divider} />
       <UserBlock />
     </aside>

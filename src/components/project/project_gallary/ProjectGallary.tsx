@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import React from 'react'
-import style from './project_gallary.module.scss'
-import GridLayout from '../../layouts/grid_layout';
+import Link from "next/link";
+import React from "react";
+import style from "./project_gallary.module.scss";
+import GridLayout from "../../layouts/GridLayout";
 
 function ProjectGallary() {
   return (
@@ -12,11 +12,9 @@ function ProjectGallary() {
           See all
         </Link>
       </div>
-      <GridLayout>
-
-      </GridLayout>
+      <GridLayout></GridLayout>
     </section>
   );
 }
 
-export default ProjectGallary
+export default ProjectGallary;

@@ -8,6 +8,7 @@
 
   .title {
     font-size: 3rem;
+    line-height: 1em;
   }
 
   .iconsBlock {
@@ -25,5 +26,13 @@
         scale: 110%;
       }
     }
+  }
+}
+
+// Mobile
+@media screen and (max-width: 600px) {
+  .container {
+    //TODO: make button for mobile devices
+    flex-direction: column;
   }
 }
