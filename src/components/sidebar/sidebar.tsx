@@ -13,6 +13,7 @@ import { RiContactsLine, RiStackLine } from "react-icons/ri";
 import { BsFillSquareFill } from "react-icons/bs";
 import { MdOutlineAddBox } from "react-icons/md";
 import { menuItem } from "../../types/nav_item";
+import ThemeChanger from '../base/inputs/ThemeChanger';
 
 const menuItems: menuItem[] = [
   {
@@ -65,7 +66,7 @@ const helpers = helperItems.map(({ href, icon, id, name }: menuItem) => {
   return <SidebarLink key={id} href={href} icon={icon} name={name} />;
 });
 
-const Sidebar = (): JSX.Element => {
+const Sidebar = ({switchTheme}: {switchTheme:any}): JSX.Element => {
   return (
     <aside className={style.sidebar}>
       <Logo_block />
@@ -84,7 +85,7 @@ const Sidebar = (): JSX.Element => {
         </span>
       </MenuLayout>
       <MenuLayout className={style.sidebar__nav}>{helpers}</MenuLayout>
-
+      <ThemeChanger/>
       <CustomDivider className={style.divider} />
       <UserBlock />
     </aside>

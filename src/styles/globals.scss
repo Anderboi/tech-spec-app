@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
-@import 'normalize';
-@import 'abstracts/colors';
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap");
+@import "normalize";
+@import "abstracts/colors";
 
 :root {
   @each $name, $color in $colors-light {
     --color-#{$name}: #{$color};
   }
-  --theme: 'light';
+  --theme: "light";
 }
 
 * {
@@ -41,7 +41,7 @@ h5 {
 }
 h1 {
   font-size: 2.4rem;
-  letter-spacing: -.03rem;
+  letter-spacing: -0.03rem;
 }
 
 h2 {
@@ -65,11 +65,17 @@ a {
 }
 
 //* dark mode
-@media (prefers-color-scheme: dark) {
-  :root {
-      @each $name, $color in $colors-dark {
-        --color-#{$name}: #{$color};
-      }
-      --theme: 'dark';
-    }
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     @each $name, $color in $colors-dark {
+//       --color-#{$name}: #{$color};
+//     }
+//     --theme: "dark";
+//   }
+// }
+
+[data-theme="dark"] {
+  @each $name, $color in $colors-dark {
+    --color-#{$name}: #{$color};
   }
+}
