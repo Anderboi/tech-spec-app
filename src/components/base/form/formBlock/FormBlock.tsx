@@ -1,24 +1,22 @@
-import React from 'react'
-import style from './FormBlock.module.scss'
+import React from "react";
+import style from "./FormBlock.module.scss";
 
-interface Props {
-  title: string
-  children: React.ReactNode
+interface FormBlockProps extends React.HTMLAttributes<HTMLDivElement> {
+  title?: string;
+  children: React.ReactNode;
 }
 
-const FormBlock: React.FunctionComponent<Props> = ({
+const FormBlock: React.FunctionComponent<FormBlockProps> = ({
   children,
   title,
+  ...props
 }): JSX.Element => {
   return (
-    <section>
+    <section {...props}>
       <h3>{title}</h3>
-			<article className={style.container}>
-      {children}
-
-			</article>
+      <section className={style.container}>{children}</section>
     </section>
-  )
-}
+  );
+};
 
-export default FormBlock
+export default FormBlock;

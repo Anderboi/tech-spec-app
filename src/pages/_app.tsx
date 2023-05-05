@@ -11,12 +11,12 @@ export default function App({
   Component,
   pageProps,
 }: AppProps<{ initialSession: Session }>) {
-  // const [supabaseClient] = useState(() => createBrowserSupabaseClient())
+  const [supabase] = useState(() => createBrowserSupabaseClient());
 
   return (
-    // <SessionContextProvider
-    // supabaseClient={supabaseClient}
-    // initialSession={pageProps.initialSession}>
+    <SessionContextProvider
+    supabaseClient={supabase}
+    initialSession={pageProps.initialSession}>
     <ThemeProvider
       // enableSystem
       themes={["light", "dark"]}
@@ -25,6 +25,6 @@ export default function App({
         <Component {...pageProps} />
       </Layout>
     </ThemeProvider>
-    /* </SessionContextProvider> */
+    </SessionContextProvider> 
   );
 }

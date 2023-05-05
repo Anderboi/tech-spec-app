@@ -30,9 +30,9 @@ const UserBlock = () => {
       )}
       <div className={style.infoBlock}>
         {user ? (
-          <span className={style.name}>{user?.id}</span>
+          <Link href='/AccountPage' className={style.name}>{user?.id}</Link>
         ) : (
-          <Link href='/login'>Sign In</Link>
+          <Link href='/LandingPage'>Sign In</Link>
         )}
         {user && <span className={style.email}>{user?.email}</span>}
       </div>

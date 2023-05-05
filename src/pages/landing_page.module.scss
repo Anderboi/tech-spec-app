@@ -1,0 +1,21 @@
+
+
+.container {
+  width: 60rem;
+  height: 100%;
+  margin: auto auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+
+  .textblock{
+    padding-bottom: 2rem;
+    text-align: center;
+  }
+
+  .buttonblock{
+    display: flex;
+    justify-content: space-between;
+  }
+}

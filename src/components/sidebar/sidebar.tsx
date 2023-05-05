@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./sidebar.module.scss";
-import MenuLayout from "./menuLayout/menuLayout";
+import MenuLayout from "./menuLayout/MenuLayout";
 import { Logo_block } from "./LogoBlock";
 import {
   MdOutlineNotificationsActive,
