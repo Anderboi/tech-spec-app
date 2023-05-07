@@ -30,7 +30,7 @@ const UserBlock = () => {
       )}
       <div className={style.infoBlock}>
         {user ? (
-          <Link href='/AccountPage' className={style.name}>{user?.id}</Link>
+          <Link href='/AccountPage' className={style.name} legacyBehavior>{user?.id}</Link>
         ) : (
           <Link href='/LandingPage'>Sign In</Link>
         )}
@@ -38,7 +38,7 @@ const UserBlock = () => {
       </div>
       <BsChevronExpand className={style.icon} />
     </article>
-  )
+  );
 }
 
 export default UserBlock

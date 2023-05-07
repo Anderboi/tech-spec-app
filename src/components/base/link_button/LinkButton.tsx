@@ -8,9 +8,7 @@ interface Props {
 }
 
 const LinkButton: React.FunctionComponent<Props> = ({href, children}) => {
-	return (
-		<Link href={href} className={style.link}>{children}</Link>
-	)
+	return <Link href={href} className={style.link} legacyBehavior>{children}</Link>;
 }
 
 export default LinkButton

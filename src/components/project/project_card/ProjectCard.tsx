@@ -17,7 +17,7 @@ const ProjectCard: React.FunctionComponent<Project> = ({
   stage,
 }): JSX.Element => {
   return (
-    <Link href={`/project/${id}`} className={style.card}>
+    <Link href={`/project/${id}`} className={style.card} legacyBehavior>
       <div className={style.image_conteiner}>
         <div className={style.icons_block}>
           <TiStarOutline />

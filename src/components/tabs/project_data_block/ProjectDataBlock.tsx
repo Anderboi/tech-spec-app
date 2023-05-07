@@ -25,7 +25,7 @@ const ProjectDataBlock: React.FunctionComponent<Props> = ({
       <div className={style.container__head} onClick={handleOpen}>
         <span className={style.header}>{title}</span>
         <div>
-          {/* Add edit icon here */}
+          {/* //TODO: Add edit icon here */}
           <IoIosArrowDown
             className={cn(style.icon, { [`${style.icon_active}`]: open })}
           />

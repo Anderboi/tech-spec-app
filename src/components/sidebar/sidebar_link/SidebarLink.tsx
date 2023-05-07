@@ -11,7 +11,7 @@ const SidebarLink = ({ href, icon, name }: menuItem):JSX.Element => {
     <Link
       href={href}
       className={cn(style.item, router.pathname == href && style.active)}
-    >
+      legacyBehavior>
       <span className={style.icon}>{icon}</span>
       <span className={style.name}>{name}</span>
     </Link>

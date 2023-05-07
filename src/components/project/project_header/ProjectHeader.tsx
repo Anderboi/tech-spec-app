@@ -23,7 +23,7 @@ function ProjectHeader(project: Project): JSX.Element {
         {/* <span className={style.date}>{`initDate`}</span> */}
         <span>
           {"Address: "}
-          <Link href={"#"} className={style.link}>
+          <Link href={"#"} className={style.link} legacyBehavior>
             {project.address}
           </Link>
         </span>
