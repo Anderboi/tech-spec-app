@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import React from "react";
 import style from "./project_card.module.scss";
 import { TiStarOutline, TiStarFullOutline } from "react-icons/ti";
@@ -28,7 +28,6 @@ const ProjectCard: React.FunctionComponent<Project> = ({
             className={style.image}
             src="/images/blank.jpg"
             alt="project image"
-            fill
           />
         )}
       </div>

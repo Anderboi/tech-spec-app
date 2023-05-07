@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from "next/image";
+import Image from "next/legacy/image";
 import style from './logo_block.module.scss';
 
 export const Logo_block = () => {
