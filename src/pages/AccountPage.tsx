@@ -2,8 +2,8 @@ import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 import { Session } from "@supabase/supabase-js";
 import React, { useEffect, useState } from "react";
 import { Database } from "../types/supabase";
-import FormBlock from '../components/base/form/formBlock/FormBlock';
-import Input from '../components/base/inputs/Input';
+import FormBlock from "../components/base/form/formBlock/FormBlock";
+import Input from "../components/base/inputs/Input";
 
 type Profiles = Database["public"]["Tables"]["profiles"]["Row"];
 
@@ -84,16 +84,17 @@ const AccountPage = ({ session }: { session: Session }) => {
   return (
     <FormBlock>
       <div className="form-widget">
-        {/* <div>
-        <label htmlFor="email">Email</label>
-        <input id="email" type="text" value={session.user.email} disabled />
-      </div> */}
+        <div>
+          <label htmlFor="email">Email</label>
+          <Input id="email" type="email" value={session.user.email} disabled />
+        </div>
         <div>
           <label htmlFor="username">Username</label>
           <Input
             id="username"
             type="text"
             value={username || ""}
+            placeholder='User'
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>

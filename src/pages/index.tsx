@@ -15,7 +15,7 @@ function Page() {
         <small>
           Our app helps you to track your projects, make proper project
           decisions.
-        </small>(((())))
+        </small>
       </div>
 
       {!session ? (

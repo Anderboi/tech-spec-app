@@ -21,6 +21,7 @@ const LandingPage = () => {
 
       {!session ? (
         <Auth
+          providers={["google", "facebook", "apple"]}
           magicLink
           supabaseClient={supabase}
           appearance={{ theme: ThemeSupa }}

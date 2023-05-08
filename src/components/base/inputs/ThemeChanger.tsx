@@ -1,17 +1,8 @@
-import { ThemeProvider, useTheme } from "next-themes";
-import React, { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
+import React from "react";
 
 const ThemeChanger = () => {
   const { theme, setTheme } = useTheme();
-  // const [mounted, setMounted] = useState(false)
-
-// useEffect(() => {
-//   setMounted(true)
-// },[])
-
-// if (!mounted) {
-//   return null;
-// }
 
   return (
     <div>

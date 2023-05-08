@@ -13,26 +13,30 @@ const UserBlock = () => {
     <article className={style.container}>
       {user ? (
         <Image
-          alt='avatar'
+          alt="avatar"
           height={44}
           width={44}
-          src='/images/avatar.jpg'
+          src="/images/avatar.jpg"
           className={style.avatar}
+          priority
         />
       ) : (
         <Image
-          alt='avatar'
+          alt="avatar"
           height={44}
           width={44}
-          src='/images/avatar.jpg'
+          src="/images/avatar.jpg"
           className={style.avatar}
+          priority
         />
       )}
       <div className={style.infoBlock}>
         {user ? (
-          <Link href='/AccountPage' className={style.name} legacyBehavior>{user?.id}</Link>
+          <Link href="/AccountPage" className={style.name}>
+            {user?.name || 'User'}
+          </Link>
         ) : (
-          <Link href='/LandingPage'>Sign In</Link>
+          <Link href="/">Sign In</Link>
         )}
         {user && <span className={style.email}>{user?.email}</span>}
       </div>

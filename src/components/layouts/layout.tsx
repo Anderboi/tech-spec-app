@@ -1,4 +1,3 @@
-import Head from "next/head";
 import React from "react";
 import style from "./layout.module.scss";
 import Sidebar from "../sidebar/Sidebar";

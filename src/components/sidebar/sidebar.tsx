@@ -71,7 +71,7 @@ const Sidebar = (): JSX.Element => {
     <aside className={style.sidebar}>
       <Logo_block />
       <MenuLayout className={style.sidebar__nav}>{items}</MenuLayout>
-      <CustomDivider className={style.divider} />
+      {/* <CustomDivider className={style.divider} /> */}
 
       <MenuLayout className={style.sidebar__projectsBlock}>
         <span className={style.sidebar__subheader}>Favourites</span>
@@ -86,7 +86,7 @@ const Sidebar = (): JSX.Element => {
       </MenuLayout>
       <MenuLayout className={style.sidebar__nav}>{helpers}</MenuLayout>
       <ThemeChanger />
-      <CustomDivider className={style.divider} />
+      {/* <CustomDivider className={style.divider} /> */}
       <UserBlock />
     </aside>
   );

@@ -1,23 +1,25 @@
 import React from "react";
 import { Project } from "../../../types/types";
 import Link from "next/link";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import cn from "classnames";
 import style from "./project_header.module.scss";
 
 function ProjectHeader(project: Project): JSX.Element {
   return (
     <section className={cn(style.header, style.section)}>
-      <Image
-        src={project.image ? project.image : "/images/blank.jpg"}
-        alt="Project cover"
-        width='0'
-        height='0'
-        sizes="100vw"
-        style={{ width: "100%", height: "auto" }}
-        className={style.header__image}
-        priority
-      />
+      {/* <div className={style.header__image}> */}
+        <Image
+          src={project.image ? project.image : "/images/blank.jpg"}
+          alt="Project cover"
+          width='600'
+          height='440'
+          // sizes="100vw"
+          // fill
+          style={{ width: "100%", height: "300px" , objectFit: "cover"}}
+          priority
+        />
+      {/* </div> */}
       <div className={style.textblock}>
         <h3 className={style.textblock__header}>{project.name}</h3>
         {/* <span className={style.date}>{`initDate`}</span> */}

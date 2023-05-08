@@ -12,7 +12,7 @@ function ProjectGallary() {
           See all
         </Link>
       </div>
-      <GridLayout>children</GridLayout>
+      <GridLayout>Children</GridLayout>
     </section>
   );
 }

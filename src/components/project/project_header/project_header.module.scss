@@ -7,9 +7,9 @@
   border: 1px solid getColor(bg-variant);
 
   &__image {
-    // max-height: 28rem;
-    // max-width: 96rem;
-    // object-fit: cover;
+    height: 28rem;
+    width: 96rem;
+    object-fit: cover;
   }
 
   .textblock {

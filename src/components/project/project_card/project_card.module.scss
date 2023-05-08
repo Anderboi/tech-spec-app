@@ -29,6 +29,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+      font-size: 1.6rem;
     }
 
     .lower_block {
@@ -38,11 +39,11 @@
 
       .area_heading {
         color: getColor(text-secondary);
-        font-size: 1.4rem;
+        font-size: 1.3rem;
       }
       .area_value {
         color: getColor(text-secondary);
-        font-size: 1.4rem;
+        font-size: 1.3rem;
 
       }
     }
