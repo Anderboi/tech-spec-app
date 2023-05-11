@@ -1,132 +1,102 @@
-import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
-import { Session } from "@supabase/supabase-js";
-import React, { useEffect, useState } from "react";
-import { Database } from "../types/supabase";
+// import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
+// import { Session, User } from "@supabase/supabase-js";
+import React, {  useState } from "react";
+// import { Database } from "../types/database.types";
 import FormBlock from "../components/base/form/formBlock/FormBlock";
 import Input from "../components/base/inputs/Input";
+import { User, createServerSupabaseClient } from '@supabase/auth-helpers-nextjs';
+import { GetServerSidePropsContext } from 'next';
 
-type Profiles = Database["public"]["Tables"]["profiles"]["Row"];
 
-const AccountPage = ({ session }: { session: Session }) => {
-  const supabase = useSupabaseClient<Database>();
-  const user = useUser();
-  const [loading, setLoading] = useState(true);
-  const [username, setUsername] = useState<Profiles["username"]>(null);
-  // const [website, setWebsite] = useState<Profiles['website']>(null)
-  const [avatar_url, setAvatarUrl] = useState<Profiles["avatar_url"]>(null);
+const AccountPage = ({ user, data }: { user: User; data: any }) => {
 
-  useEffect(() => {
-    getProfile();
-  }, [session]);
+const [email, setEmail] = useState(user.email)
+const [name, setName] = useState(user.id)
 
-  console.log(session);
-
-  async function getProfile() {
-    try {
-      setLoading(true);
-      if (!user) throw new Error("No user");
-
-      let { data, error, status } = await supabase
-        .from("profiles")
-        .select(`username, avatar_url`)
-        .eq("id", user.id)
-        .single();
-
-      if (error && status !== 406) {
-        throw error;
-      }
-
-      if (data) {
-        setUsername(data.username);
-        // setWebsite(data.website)
-        // setAvatarUrl(data.avatar_url);
-      }
-    } catch (error) {
-      alert("Error loading user data!");
-      console.log(error);
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  async function updateProfile({
-    username,
-    // website,
-    avatar_url,
-  }: {
-    username: Profiles["username"];
-    // website: Profiles['website']
-    avatar_url: Profiles["avatar_url"];
-  }) {
-    try {
-      setLoading(true);
-      if (!user) throw new Error("No user");
-
-      const updates = {
-        id: user.id,
-        username,
-        // website,
-        avatar_url,
-        updated_at: new Date().toISOString(),
-      };
-
-      let { error } = await supabase.from("profiles").upsert(updates);
-      if (error) throw error;
-      alert("Profile updated!");
-    } catch (error) {
-      alert("Error updating the data!");
-      console.log(error);
-    } finally {
-      setLoading(false);
-    }
-  }
-
+console.log(data);
   return (
+    // <>
+    //   <div>Protected content for {user.email} the {data[0].role}</div>
+    //   <pre>{JSON.stringify(data, null, 2)}</pre>
+    //   {/* <pre>{JSON.stringify(user, null, 2)}</pre> */}
+    // </>
     <FormBlock>
       <div className="form-widget">
         <div>
           <label htmlFor="email">Email</label>
-          <Input id="email" type="email" value={session.user.email} disabled />
+          <Input
+            id="email"
+            type="email"
+            onChange={(e) => setEmail(e.target.value)}
+            value={user.email}
+          />
         </div>
         <div>
           <label htmlFor="username">Username</label>
           <Input
             id="username"
             type="text"
-            value={username || ""}
-            placeholder='User'
-            onChange={(e) => setUsername(e.target.value)}
+            value={name || ""}
+            placeholder="User"
+            onChange={(e) => setName(e.target.value)}
           />
         </div>
-        {/* <div>
-        <label htmlFor="website">Website</label>
-        <input
-          id="website"
-          type="url"
-          value={website || ''}
-          onChange={(e) => setWebsite(e.target.value)}
-        />
-      </div> */}
-        <div>
-          <button
+     <div>
+      {/* //TODO: make button to change role */}
+      <select name="role" id="role">
+        <option value="User">User</option>
+        <option value='Client'>Client</option>
+        <option value='Designer'>Designer</option>
+      </select>
+     </div>
+         {/* <div>
+           <button
             className="button primary block"
-            onClick={() => updateProfile({ username, avatar_url })}
+            onClick={() => updateProfile({ username, email, avatar_url })}
             disabled={loading}
           >
             {loading ? "Loading ..." : "Update"}
           </button>
-        </div>
-        <div>
-          <button
+        </div> */}
+        {/* <div>
+           <button
             className="button block"
             onClick={() => supabase.auth.signOut()}
           >
             Sign Out
-          </button>
-        </div>
+          </button> 
+        </div> */}
       </div>
     </FormBlock>
   );
+};
+
+export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
+  // Create authenticated Supabase Client
+  const supabase = createServerSupabaseClient(ctx);
+  // Check if we have a session
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
+
+  if (!session)
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+    };
+
+    // Run queries with RLS on the server
+  const { data } = await supabase.from('profiles').select('*')
+
+  return {
+    props: {
+      initialSession: session,
+      user: session.user,
+      data: data ?? [],
+    },
+  };
 };
 
 export default AccountPage;

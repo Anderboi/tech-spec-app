@@ -31,6 +31,6 @@
     "@types/next": "^9.0.0",
     "eslint-config-next": "^13.4.1",
     "sass": "^1.62.1",
-    "supabase": "^1.54.5"
+    "supabase": "^1.57.3"
   }
 }

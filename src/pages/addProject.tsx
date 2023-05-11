@@ -3,32 +3,32 @@ import FormBlock from "../components/base/form/formBlock/FormBlock";
 import style from "./addProject.module.scss";
 import Button from "../components/base/inputs/Button";
 import Input from "../components/base/inputs/Input";
+import handler from "./api/createProject";
 
 const AddProject = () => {
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
 
     const target = e.target as typeof e.target & {
-      name: { value: string };
+      // name: { value: string };
       area: { value: number };
-      // address: { value: string };
-      city: { value: string};
-      street: { value: string};
+      address: { value: string };
+      city: { value: string };
+      street: { value: string };
       number: { value: number };
     };
 
-    const name = target.name.value;
+    // const name = target.name.value;
     const area = target.area.value;
     const address = `${target.city.value}, ${target.street.value} ${target.number.value}`;
 
     const data = {
-      name: name,
+      // name: name,
       area: area,
       address: address,
     };
-
     const JSONdata = JSON.stringify(data);
-console.log(JSONdata);
+
     const endpoint = "api/createProject";
 
     const options = {
@@ -38,10 +38,11 @@ console.log(JSONdata);
       },
       body: JSONdata,
     };
-
     const response = await fetch(endpoint, options);
-
+    
     const result = await response.json();
+
+    // handler(data, result);
 
     alert(result.data);
   };
@@ -49,7 +50,7 @@ console.log(JSONdata);
   return (
     <div className={style.container}>
       <form className={style.form} onSubmit={handleSubmit}>
-      <h1>Создать новый проект</h1>
+        <h1>Создать новый проект</h1>
         <FormBlock>
           <div className={style.input__container}>
             <Input

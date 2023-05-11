@@ -1,12 +1,30 @@
-import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
+'use client'
+
+import {
+  useSession,
+  useSupabaseClient,
+  useUser,
+} from "@supabase/auth-helpers-react";
 import style from "./landing_page.module.scss";
-import { Auth } from '@supabase/auth-ui-react';
-import AccountPage from './AccountPage';
+import { Auth } from "@supabase/auth-ui-react";
+import AccountPage from "./AccountPage";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
+import { useEffect, useState } from "react";
 
 function Page() {
-      const session = useSession();
-  const supabase = useSupabaseClient();
+  // const session = useSession();
+  const user = useUser();
+  const supabaseClient = useSupabaseClient();
+  const [data, setData] = useState();
+
+  useEffect(() => {
+    async function loadData() {
+      const { data } = await supabaseClient.from("test").select("*");
+      setData(data);
+      console.log(data)
+    } // Only run query once user is logged in.
+    if (user) loadData();
+  }, [user]);
 
   return (
     <section className={style.container}>
@@ -18,15 +36,18 @@ function Page() {
         </small>
       </div>
 
-      {!session ? (
+      {!user && (
         <Auth
+          redirectTo="/AccountPage"
+          providers={["google", "facebook", "apple"]}
           magicLink
-          supabaseClient={supabase}
+          supabaseClient={supabaseClient}
           appearance={{ theme: ThemeSupa }}
-          theme="dark"
+          // theme="system"
+          socialLayout="horizontal"
         />
-      ) : (
-        <AccountPage session={session} />
+        // ) : (
+        //   <AccountPage session={session} />
       )}
 
       {/* <FormBlock>
@@ -38,7 +59,6 @@ function Page() {
       </FormBlock> */}
     </section>
   );
-};
-
+}
 
 export default Page;

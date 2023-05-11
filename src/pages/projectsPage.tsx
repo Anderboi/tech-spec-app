@@ -33,7 +33,7 @@ function ProjectsPage({ projects }: { projects: Project[] }) {
               project_area={project.project_area}
               stage="Feasibility"
               image={project.image}
-              Client={project.Client}
+              client={project.client}
             />
           ))}
         </GridLayout>

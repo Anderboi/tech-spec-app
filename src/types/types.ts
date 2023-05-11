@@ -20,5 +20,5 @@ export interface Project {
   project_area: number;
   image?: any;
   stage?: Stage;
-  Client: string;
+  client: string;
 }

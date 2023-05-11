@@ -17,6 +17,7 @@ export default function App({
   Component,
   pageProps,
 }: AppProps<{ initialSession: Session }>) {
+  
   const [supabase] = useState(() => createBrowserSupabaseClient());
 
   return (

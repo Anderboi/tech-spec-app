@@ -20,7 +20,7 @@ const Project = ({ project }: { project: Project }) => {
   return (
     <>
       <ProjectHeader
-        Client={project.Client}
+        client={project.client}
         address={project.address}
         name={project.name}
         project_area={project.project_area}
