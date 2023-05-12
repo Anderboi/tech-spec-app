@@ -1,19 +1,21 @@
 // import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 // import { Session, User } from "@supabase/supabase-js";
-import React, {  useState } from "react";
+import React, { useState } from "react";
+import Button from "../components/base/inputs/Button";
 // import { Database } from "../types/database.types";
 import FormBlock from "../components/base/form/formBlock/FormBlock";
 import Input from "../components/base/inputs/Input";
-import { User, createServerSupabaseClient } from '@supabase/auth-helpers-nextjs';
-import { GetServerSidePropsContext } from 'next';
-
+import {
+  User,
+  createServerSupabaseClient,
+} from "@supabase/auth-helpers-nextjs";
+import { GetServerSidePropsContext } from "next";
 
 const AccountPage = ({ user, data }: { user: User; data: any }) => {
+  const [email, setEmail] = useState(user.email);
+  const [name, setName] = useState(user.id);
 
-const [email, setEmail] = useState(user.email)
-const [name, setName] = useState(user.id)
-
-console.log(data);
+  console.log(data);
   return (
     // <>
     //   <div>Protected content for {user.email} the {data[0].role}</div>
@@ -41,15 +43,12 @@ console.log(data);
             onChange={(e) => setName(e.target.value)}
           />
         </div>
-     <div>
-      {/* //TODO: make button to change role */}
-      <select name="role" id="role">
-        <option value="User">User</option>
-        <option value='Client'>Client</option>
-        <option value='Designer'>Designer</option>
-      </select>
-     </div>
-         {/* <div>
+        <div>
+          <span>User role: {data[0].role}</span>
+          {/* //TODO: onClick action to change the role, redirect to changeRolePage */}
+          <Button mode="action">Change role</Button>
+        </div>
+        {/* <div>
            <button
             className="button primary block"
             onClick={() => updateProfile({ username, email, avatar_url })}
@@ -87,8 +86,8 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
       },
     };
 
-    // Run queries with RLS on the server
-  const { data } = await supabase.from('profiles').select('*')
+  // Run queries with RLS on the server
+  const { data } = await supabase.from("profiles").select("*");
 
   return {
     props: {

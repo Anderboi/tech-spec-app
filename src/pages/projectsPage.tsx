@@ -5,9 +5,11 @@ import ProjectCard from "../components/project/project_card/ProjectCard";
 import Head from "next/head";
 import { Project } from "../types/types";
 import { supabase } from "../lib/supabaseClient";
+import getProjects from '../lib/getProjects';
 
 export async function getStaticProps() {
   const { data } = await supabase.from("projects").select("*").order("id");
+  // const projects = getProjects()
   return {
     props: {
       projects: data,

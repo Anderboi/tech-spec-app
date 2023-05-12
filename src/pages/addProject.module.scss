@@ -11,6 +11,7 @@
 	.form {
 		background-color: getColor(bg);
 		border-radius: $border-radius;
+		border: 1px solid getColor(bg-variant);
 		padding: 3rem;
 		display: flex;
 		flex-direction: column;

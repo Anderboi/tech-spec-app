@@ -1,50 +1,63 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import FormBlock from "../components/base/form/formBlock/FormBlock";
 import style from "./addProject.module.scss";
 import Button from "../components/base/inputs/Button";
 import Input from "../components/base/inputs/Input";
-import handler from "./api/createProject";
+import { supabase } from "../lib/supabaseClient";
+import { useRouter } from "next/navigation";
+import { useUser } from "@supabase/auth-helpers-react";
 
 const AddProject = () => {
+  const [city, setCity] = useState("");
+  const [street, setStreet] = useState("");
+  const [number, setNumber] = useState("");
+  const [area, setArea] = useState("");
+  const [formError, setFormError] = useState<string>("");
+  const user = useUser();
+
+  const router = useRouter();
+
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
 
-    const target = e.target as typeof e.target & {
-      // name: { value: string };
-      area: { value: number };
-      address: { value: string };
-      city: { value: string };
-      street: { value: string };
-      number: { value: number };
+    // const area = target.area.value;
+    const projectAddress = `${city}, ${street} ${number}`;
+
+    const project_area = area;
+    const title = projectAddress;
+    const address = projectAddress;
+
+    const projectData = {
+      user_id: user?.id,
+      title: projectAddress,
+      project_area: area,
+      address: projectAddress,
+      image: null,
+      client: null,
     };
 
-    // const name = target.name.value;
-    const area = target.area.value;
-    const address = `${target.city.value}, ${target.street.value} ${target.number.value}`;
+    if (!city || !street || !number) {
+      setFormError("Please fill in all fields correctly");
+      return;
+    }
+    console.log(projectData);
+    const { data, error } = await supabase
+      .from("projects")
+      .insert([projectData])
+      .select();
 
-    const data = {
-      // name: name,
-      area: area,
-      address: address,
-    };
-    const JSONdata = JSON.stringify(data);
+    if (error) {
+      console.log(error);
+      setFormError("Please fill in all fields correctly");
+    }
 
-    const endpoint = "api/createProject";
-
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSONdata,
-    };
-    const response = await fetch(endpoint, options);
-    
-    const result = await response.json();
-
-    // handler(data, result);
-
-    alert(result.data);
+    if (data) {
+      console.log(data);
+      setFormError("");
+      router.push("/ProjectsPage");
+    }
   };
 
   return (
@@ -59,6 +72,9 @@ const AddProject = () => {
               name="city"
               id="city"
               className={style.input}
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+              required
             />
             <Input
               type="text"
@@ -66,6 +82,9 @@ const AddProject = () => {
               name="street"
               id="street"
               className={style.input}
+              value={street}
+              onChange={(e) => setStreet(e.target.value)}
+              required
             />
             <Input
               type="number"
@@ -73,6 +92,9 @@ const AddProject = () => {
               name="number"
               id="number"
               className={style.input}
+              value={number}
+              onChange={(e) => setNumber(e.target.value)}
+              required
             />
             <Input
               type="number"
@@ -81,6 +103,9 @@ const AddProject = () => {
               id="area"
               min={1}
               className={style.input}
+              value={area}
+              onChange={(e) => setArea(e.target.value)}
+              required
             />
           </div>
           <Input
@@ -89,7 +114,6 @@ const AddProject = () => {
             id="email"
             name="email"
             className={style.input}
-            required
           />
           <Input
             type="tel"
@@ -97,14 +121,16 @@ const AddProject = () => {
             id="phone"
             name="phone"
             className={style.input}
-            required
           />
         </FormBlock>
         <div className={style.buttonBlock}>
           <Button mode="ghost">Cancel</Button>
-          <Button mode="action">Create</Button>
+          <Button mode="action" onSubmit={handleSubmit}>
+            Create
+          </Button>
         </div>
       </form>
+      {formError && <span>Fill correctly</span>}
     </div>
   );
 };
