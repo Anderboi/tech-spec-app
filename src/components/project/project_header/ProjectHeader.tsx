@@ -32,7 +32,6 @@ function ProjectHeader(project: Project): JSX.Element {
         <span>
           Area: <span>{project.project_area}</span>
         </span>
-        <span>Client: {project.client}</span>
         <span>Team: </span>
       </div>
     </section>

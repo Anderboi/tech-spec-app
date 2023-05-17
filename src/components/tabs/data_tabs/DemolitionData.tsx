@@ -1,10 +1,10 @@
 import React from "react";
-import ProjectDataBlock from "../project_data_block/ProjectDataBlock";
+import ProjectDataBlockLayout from "../project_data_block/ProjectDataBlockLayout";
 
 const DemolitionData = () => {
   return (
     <>
-      <ProjectDataBlock title="Информация по демонтажу">
+      <ProjectDataBlockLayout title="Информация по демонтажу">
         <div>
           <h4>Инженерные системы:</h4>
           <span>Heating:</span>
@@ -22,9 +22,9 @@ const DemolitionData = () => {
           <span>Doors:</span>
           <span>Windows:</span>
         </div>
-      </ProjectDataBlock>
-      <ProjectDataBlock title="Utilities">one</ProjectDataBlock>
-      <ProjectDataBlock title="Equipment">one</ProjectDataBlock>
+      </ProjectDataBlockLayout>
+      <ProjectDataBlockLayout title="Utilities">one</ProjectDataBlockLayout>
+      <ProjectDataBlockLayout title="Equipment">one</ProjectDataBlockLayout>
     </>
   );
 };

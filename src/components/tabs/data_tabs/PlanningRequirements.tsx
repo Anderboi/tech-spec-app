@@ -1,9 +1,11 @@
 import React from "react";
-import ProjectDataBlock from "../project_data_block/ProjectDataBlock";
+import ProjectDataBlockLayout from "../project_data_block/ProjectDataBlockLayout";
 
 const PlanningRequirements = () => {
   return (
-    <ProjectDataBlock title="Планировочные пожелания">one</ProjectDataBlock>
+    <ProjectDataBlockLayout title="Планировочные пожелания">
+      one
+    </ProjectDataBlockLayout>
   );
 };
 

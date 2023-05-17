@@ -1,14 +1,14 @@
 import React from "react";
-import ProjectDataBlock from "../project_data_block/ProjectDataBlock";
+import ProjectDataBlockLayout from "../project_data_block/ProjectDataBlockLayout";
 
 const ProjectInformation = () => {
   return (
-    <ProjectDataBlock title="Общая информация по объекту">
+    <ProjectDataBlockLayout title="Общая информация по объекту">
       <div>Адрес:</div>
       <div>Площадь объекта:</div>
       <div>Этажность:</div>
       <div>Количество единовременно проживающих:</div>
-    </ProjectDataBlock>
+    </ProjectDataBlockLayout>
   );
 };
 

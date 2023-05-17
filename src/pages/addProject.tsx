@@ -22,12 +22,7 @@ const AddProject = () => {
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
 
-    // const area = target.area.value;
     const projectAddress = `${city}, ${street} ${number}`;
-
-    const project_area = area;
-    const title = projectAddress;
-    const address = projectAddress;
 
     const projectData = {
       user_id: user?.id,
@@ -130,7 +125,7 @@ const AddProject = () => {
           </Button>
         </div>
       </form>
-      {formError && <span>Fill correctly</span>}
+      {formError && <span>{formError}</span>}
     </div>
   );
 };

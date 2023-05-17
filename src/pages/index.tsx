@@ -1,18 +1,12 @@
-'use client'
+"use client";
 
-import {
-  useSession,
-  useSupabaseClient,
-  useUser,
-} from "@supabase/auth-helpers-react";
+import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 import style from "./landing_page.module.scss";
 import { Auth } from "@supabase/auth-ui-react";
-import AccountPage from "./AccountPage";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { useEffect, useState } from "react";
 
 function Page() {
-  // const session = useSession();
   const user = useUser();
   const supabaseClient = useSupabaseClient();
   const [data, setData] = useState();
@@ -21,7 +15,7 @@ function Page() {
     async function loadData() {
       const { data } = await supabaseClient.from("test").select("*");
       setData(data);
-      console.log(data)
+      console.log(data);
     } // Only run query once user is logged in.
     if (user) loadData();
   }, [user]);
@@ -43,13 +37,11 @@ function Page() {
           magicLink
           supabaseClient={supabaseClient}
           appearance={{ theme: ThemeSupa }}
-          // theme="system"
           socialLayout="horizontal"
         />
-        // ) : (
-        //   <AccountPage session={session} />
       )}
 
+      {/* //! Own Login block */}
       {/* <FormBlock>
         <Input type="email" placeholder="email" id='email' name='email'></Input>
         <div className={style.buttonblock}>
