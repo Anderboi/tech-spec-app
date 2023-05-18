@@ -1,0 +1,63 @@
+@use "../../../styles/abstracts/" as *;
+
+.container {
+  background-color: getColor(bg);
+  margin: 2rem 0;
+  border-radius: $border-radius;
+  border: 1px solid getColor(bg-variant);
+
+  .container__head {
+    padding: 1.6rem 3rem;
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .header {
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+
+    .icon_block {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      font-size: 1.8rem;
+
+      .edit{
+        :hover{
+          color: getColor(accent);
+        }
+      }
+      .arrow {
+        transition: all 0.1s ease;
+        transform: rotate(90deg);
+
+        &_active {
+          transform: rotate(0deg);
+        }
+      }
+    }
+  }
+
+  .container__body {
+    max-height: 0px;
+    transition: all 0.1s ease;
+    overflow-y: scroll;
+    opacity: 0;
+    .data {
+      padding: 0 3rem 2rem;
+      font-size: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+  }
+  .active {
+    max-height: 20em;
+    opacity: 1;
+  }
+}
