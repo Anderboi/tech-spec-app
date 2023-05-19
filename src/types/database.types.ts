@@ -43,7 +43,6 @@ export interface Database {
           id: number;
           user_id: string;
           username: string | null;
-          title: string | null;
           image: string | null;
           project_area: string | null;
           address: string | null;
@@ -54,7 +53,6 @@ export interface Database {
           id?: number;
           user_id: string;
           username?: string | null;
-          title?: string | null;
           image?: string | null;
           project_area?: string | null;
           address?: string | null;
@@ -65,7 +63,6 @@ export interface Database {
           id?: number;
           user_id?: string;
           username?: string | null;
-          title?: string | null;
           image?: string | null;
           project_area?: string | null;
           address?: string | null;

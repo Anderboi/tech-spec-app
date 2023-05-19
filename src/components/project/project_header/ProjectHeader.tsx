@@ -13,10 +13,10 @@ function ProjectHeader(project: Project): JSX.Element {
           src={project.image ? project.image : "/images/blank.jpg"}
           alt="Project cover"
           width='600'
-          height='440'
+          height='350'
           // sizes="100vw"
           // fill
-          style={{ width: "100%", height: "300px" , objectFit: "cover"}}
+          style={{ width: "100%", height: "200px" , objectFit: "cover"}}
           priority
         />
       {/* </div> */}

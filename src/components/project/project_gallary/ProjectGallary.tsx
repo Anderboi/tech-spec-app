@@ -3,7 +3,11 @@ import React from "react";
 import style from "./project_gallary.module.scss";
 import GridLayout from "../../layouts/GridLayout";
 
-function ProjectGallary() {
+interface Props {
+  children?: React.ReactNode;
+}
+
+const ProjectGallary: React.FunctionComponent<Props> = ({children}):JSX.Element => {
   return (
     <section className={style.section}>
       <div className={style.subheader}>
@@ -12,7 +16,7 @@ function ProjectGallary() {
           See all
         </Link>
       </div>
-      <GridLayout>Children</GridLayout>
+      <GridLayout>{children}</GridLayout>
     </section>
   );
 }

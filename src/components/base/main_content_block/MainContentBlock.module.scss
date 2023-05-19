@@ -2,9 +2,9 @@
 
 .mainBlock {
     width: 100%;
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 0 2rem 0 0;
+    padding: 0 2rem;
 
     overflow: hidden;
   }
@@ -12,6 +12,6 @@
   // Mobile
 @media screen and (max-width: 600px) {
   .mainBlock {
-    padding: 0 2rem;
+    padding: 0 1rem;
   }
 }

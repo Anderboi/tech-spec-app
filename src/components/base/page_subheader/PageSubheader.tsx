@@ -1,7 +1,4 @@
 import React from "react";
-import { MdOutlineAddBox } from "react-icons/md";
-import { IoSearch } from "react-icons/io5";
-import { TiStarOutline } from "react-icons/ti";
 import { GoPlus } from "react-icons/go";
 import style from "./page_subheader.module.scss";
 import Button from '../inputs/Button';
@@ -22,11 +19,6 @@ const PageSubheader = ({ title }: Props) => {
       <Button mode="action" onClick={() => router.push("/AddProject")}>
         <GoPlus /> New project
       </Button>
-      {/* <div className={style.iconsBlock}> */}
-      {/* <MdOutlineAddBox className={style.icon} />
-        <IoSearch className={style.icon} />
-        <TiStarOutline className={style.icon} /> */}
-      {/* </div> */}
     </div>
   );
 };

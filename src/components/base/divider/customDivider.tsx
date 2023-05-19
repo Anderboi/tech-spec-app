@@ -9,7 +9,7 @@ const CustomDivider: React.FC<DividerProps> = ({
   className,
   ...props
 }): JSX.Element => {
-  return <div className={cn(style.main, className)} />
+  return <div className={cn(style.main, className)} {...props}/>
 }
 
 export default CustomDivider

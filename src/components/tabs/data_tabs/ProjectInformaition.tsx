@@ -7,7 +7,6 @@ import Button from "../../base/inputs/Button";
 import ProjectDataBlock from "../project_data_block/ProjectDataBlock";
 import { supabase } from "../../../lib/supabaseClient";
 import { useRouter } from "next/router";
-import { Project } from "../../../types/types";
 
 const ProjectInformation = () => {
   const router = useRouter();
@@ -43,10 +42,9 @@ const ProjectInformation = () => {
     };
     fetchData();
     setEditMode(false);
-  }, []);
+  }, [id]);
 
   //! Update data from 'Projects' table on Supabase
-
   const updateData = async (id: any, newData: any) => {
     //TODO: make upload update to supabase
     try {
@@ -61,6 +59,12 @@ const ProjectInformation = () => {
     } catch (error: any) {
       console.error("Error updating data:", error.message);
     }
+  };
+
+  const handleSubmit = () => {
+    setLoading(true);
+    updateData(id, { address: address });
+    setEditMode(false);
   };
 
   return (
@@ -89,14 +93,7 @@ const ProjectInformation = () => {
         {editMode ? <Input value={colivers} /> : "project.colivers"}
       </ProjectDataBlock>
       {editMode && (
-        <Button
-          mode="action"
-          onClick={() => {
-            updateData(id, { address: address });
-    setEditMode(false);
-
-          }}
-        >
+        <Button mode="action" onClick={handleSubmit}>
           Save
         </Button>
       )}

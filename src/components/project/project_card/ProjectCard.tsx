@@ -1,7 +1,7 @@
 import Image from "next/legacy/image";
 import React from "react";
 import style from "./project_card.module.scss";
-import { TiStarOutline, TiStarFullOutline } from "react-icons/ti";
+import { TiStarOutline } from "react-icons/ti";
 import { FiMoreVertical } from "react-icons/fi";
 import { Project } from "../../../types/types";
 import ProjectStage from "./ProjectStage";
@@ -9,7 +9,7 @@ import CustomDivider from "../../base/divider/CustomDivider";
 import Link from 'next/link';
 
 const ProjectCard: React.FunctionComponent<Project> = ({
-  initDate,
+  // initDate,
   id,
   address,
   project_area,

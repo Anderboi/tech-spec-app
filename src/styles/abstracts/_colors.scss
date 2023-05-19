@@ -11,14 +11,15 @@ $colors-light: (
 
 //* dark mode
 $colors-dark: (
-  
-  bg: #030711,
-  bg-variant: #1d283a,
-  text: #dddddf,
+  // bg: #030711,
+  // bg-variant: #1d283a,
+  bg: #0D0E11,
+  bg-variant: #181A1F,
+  text: #c4c4c4,
   text-secondary: #7b7b80,
   accent: #70e2be,
   // accent: #45e6b4,
-  accent-hover: #3A7E81,
+  accent-hover: #3a7e81,
   link:
     map-get(
       $map: $colors-light,

@@ -5,10 +5,12 @@ import ProjectInformation from "./data_tabs/ProjectInformaition";
 import PlanningRequirements from "./data_tabs/PlanningRequirements";
 import DemolitionData from "./data_tabs/DemolitionData";
 
-const ProjectDataTabContainer = ({ router }: any) => {
-  const {
-    query: { tab },
-  } = router;
+const ProjectDataTabContainer = (
+  // { router }: any
+  ) => {
+  // const {
+  //   query: { tab },
+  // } = router;
 
   //! Tabs for different subgroups, if needed
   // const isTabOne = tab === '1' || tab == null

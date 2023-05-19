@@ -8,16 +8,16 @@ import { BiEdit } from "react-icons/bi";
 interface Props {
   title: string;
   children: React.ReactNode;
-  className?: string;
+  // className?: string;
   onEditClick?: () => void;
 }
 
 const ProjectDataBlockLayout: React.FunctionComponent<Props> = ({
   title = "Some Text",
   children,
-  className,
+  // className,
   onEditClick,
-  ...props
+  // ...props
 }) => {
   const [open, setOpen] = useState(false);
 

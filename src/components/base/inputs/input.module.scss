@@ -1,13 +1,13 @@
 @use '../../../styles/abstracts' as *;
 
 .input {
-	border: 2px solid transparent;
+	border: 2px solid getColor(bg-variant);
 	border-radius: $border-radius;
-	background-color: getColor(bg-variant);
-	padding: .4rem 1.2rem;
+	background-color: getColor(bg);
+	padding: .8rem 1.2rem;
 	width: 100%;
 	color: getColor(text);
-	font-size: 1.6rem;
+	font-size: 1.4rem;
 
 	&::placeholder {
 		color: getColor(text-secondary);

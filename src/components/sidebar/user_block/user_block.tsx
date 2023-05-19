@@ -2,11 +2,10 @@ import Image from "next/legacy/image"
 import React from 'react'
 import style from './user_block.module.scss'
 import {BsChevronExpand} from 'react-icons/bs'
-import {useUser, useSupabaseClient} from '@supabase/auth-helpers-react'
+import {useUser} from '@supabase/auth-helpers-react'
 import Link from 'next/link'
 
 const UserBlock = () => {
-  const supabaseClient = useSupabaseClient()
   const user = useUser()
 
   return (

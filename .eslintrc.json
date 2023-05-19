@@ -2,6 +2,18 @@
   "plugins": ["import"],
   "extends": ["next/core-web-vitals", "eslint:recommended"],
 
+  "globals": {
+    "React": true,
+    "google": true,
+    "mount": true,
+    "mountWithRouter": true,
+    "shallow": true,
+    "shallowWithRouter": true,
+    "context": true,
+    "expect": true,
+    "jsdom": true,
+    "JSX": true
+  },
   "parserOptions": {
     "ecmaVersion": 2020,
     "sourceType": "module"
@@ -12,6 +24,7 @@
     "node": true
   },
   "rules": {
+    "no-unused-vars":"off",
     "no-debugger": "off",
     "no-console": 0,
     "class-methods-use-this": "off",
